@@ -285,7 +285,8 @@ function atualizarListaVisual(){
             agrupado[item.id] = {
                 descricao: item.descricao,
                 valor: item.valor,
-                quantidade: 0
+                quantidade: 0,
+                imprime: item.imprime
             };
         }
 
@@ -298,29 +299,128 @@ function atualizarListaVisual(){
         const totalItem = produto.quantidade * produto.valor;
 
         const li = document.createElement("li");
-        li.className = "list-group-item d-flex justify-content-between align-items-center";
+
+        li.className =
+            "list-group-item d-flex justify-content-between align-items-center";
 
         li.innerHTML = `
-            <span>
+            <div class="d-flex align-items-center gap-2">
+
+                <button class="btn btn-sm btn-secondary btn-menos">
+                    -
+                </button>
+
+                <button class="btn btn-sm btn-success btn-mais">
+                    +
+                </button>
+
+                <button class="btn btn-sm btn-danger btn-excluir">
+                    X
+                </button>
+
+            </div>
+
+            <span class="flex-grow-1 ms-3">
                 ${produto.quantidade}x ${produto.descricao}
                 <br>
                 <small>Total: R$ ${totalItem.toFixed(2)}</small>
             </span>
-            <button class="btn btn-sm btn-danger">X</button>
         `;
 
-        li.querySelector("button").addEventListener("click", function(){
+        // BOTÃO MENOS
+        li.querySelector(".btn-menos")
+        .addEventListener("click", function(){
 
             const index = itensVenda.findIndex(i => i.id == id);
 
             if(index > -1){
+
                 totalVenda -= produto.valor;
+
                 estoqueControle[id] -= 1;
+
                 atualizarEstoqueSelect(id, -1);
-                itensVenda.splice(index,1);
+
+                itensVenda.splice(index, 1);
+
+                if(estoqueControle[id] <= 0){
+                    delete estoqueControle[id];
+                }
+
+                atualizarListaVisual();
             }
 
+        });
+
+        // BOTÃO MAIS
+        li.querySelector(".btn-mais")
+        .addEventListener("click", function(){
+
+            const select = document.getElementById("produto");
+
+            let option = null;
+
+            for(let i = 0; i < select.options.length; i++){
+
+                if(select.options[i].value == id){
+                    option = select.options[i];
+                    break;
+                }
+            }
+
+            if(!option){
+                return;
+            }
+
+            const estoqueDisponivel =
+                parseInt(option.getAttribute("data-estoque"));
+
+            if(estoqueDisponivel <= 0){
+                alert("Estoque insuficiente!");
+                return;
+            }
+
+            const item = {
+                id,
+                descricao: produto.descricao,
+                valor: produto.valor,
+                imprime: produto.imprime
+            };
+
+            itensVenda.push(item);
+
+            totalVenda += produto.valor;
+
+            if(!estoqueControle[id]){
+                estoqueControle[id] = 0;
+            }
+
+            estoqueControle[id] += 1;
+
+            atualizarEstoqueSelect(id, 1);
+
             atualizarListaVisual();
+
+        });
+
+        // BOTÃO EXCLUIR
+        li.querySelector(".btn-excluir")
+        .addEventListener("click", function(){
+
+            const quantidadeRemover = produto.quantidade;
+
+            itensVenda = itensVenda.filter(i => i.id != id);
+
+            totalVenda -= (produto.valor * quantidadeRemover);
+
+            estoqueControle[id] = 0;
+
+            atualizarEstoqueSelect(id, -quantidadeRemover);
+
+            delete estoqueControle[id];
+
+            atualizarListaVisual();
+
         });
 
         lista.appendChild(li);
@@ -335,7 +435,7 @@ function atualizarListaVisual(){
     if(pixSelecionado && pixSelecionado.value === "Pix"){
         gerarPix();
     }
-    
+
 }
 
 function atualizarEstoqueSelect(id, quantidadeAlterada){
