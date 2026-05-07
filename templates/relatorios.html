@@ -281,6 +281,138 @@ alert("Erro ao carregar itens da venda.");
 
 }
 
+function imprimirCupom(listaItens = [], janela = null){
+
+if(!listaItens || listaItens.length === 0){
+alert("Nenhum item para imprimir");
+return;
+}
+
+let total = 0;
+
+listaItens.forEach(i => {
+
+if(i.imprime){
+total += i.valor;
+}
+
+});
+
+const isTouchDevice = (
+'ontouchstart' in window ||
+navigator.maxTouchPoints > 0
+);
+
+const isPequeno = window.innerWidth <= 1024;
+
+const largura =
+(isTouchDevice && isPequeno)
+? "58mm"
+: "80mm";
+
+if(!janela){
+janela = window.open('', '', 'width=300,height=800');
+}
+
+let conteudo = `
+<html>
+
+<head>
+
+<style>
+
+@page{
+size:${largura} auto;
+margin:0;
+}
+
+body{
+font-family:monospace;
+width:${largura};
+margin:0;
+padding:5px;
+text-align:center;
+}
+
+.item{
+margin:18px 0;
+line-height:1.6;
+padding:4px 0;
+font-size:18px;
+}
+
+hr{
+border-top:1px dashed black;
+margin:8px 0;
+}
+
+.total{
+font-weight:bold;
+margin-top:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h3>COMUNIDADE SÃO FRANCISCO DE ASSIS</h3>
+
+<hr>
+
+<div>
+<strong>Venda Nº:</strong> ${window.numeroVendaAtual}
+</div>
+
+<div>
+<strong>Data:</strong> ${window.dataVendaAtual}
+</div>
+
+<hr>
+`;
+
+listaItens.forEach(item => {
+
+if(!item.imprime){
+return;
+}
+
+conteudo += `
+<div class="item">
+<div>${item.descricao}</div>
+<div>R$ ${item.valor.toFixed(2)}</div>
+</div>
+<hr>
+`;
+
+});
+
+conteudo += `
+<div class="total">
+TOTAL: R$ ${total.toFixed(2)}
+</div>
+
+<hr>
+
+<div>
+© 2026 - Quermesse Online
+</div>
+
+</body>
+</html>
+`;
+
+janela.document.write(conteudo);
+
+janela.document.close();
+
+janela.focus();
+
+janela.print();
+
+}    
+
 </script>
 
 {% endblock %}
