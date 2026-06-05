@@ -1804,5 +1804,59 @@ def api_relatorios():
         "total_geral": total_geral
     })
 
+# =========================
+# API CADASTRAR PRODUTO FLUTTER
+# =========================
+@app.route("/api/produtos", methods=["POST"])
+def api_cadastrar_produto():
+
+    dados = request.get_json()
+
+    descricao = dados.get("descricao")
+    valor = dados.get("valor")
+    estoque_inicial = dados.get("estoque_inicial")
+    imprimir_cupom = dados.get("imprimir_cupom", False)
+
+    if not descricao:
+        return jsonify({"erro": "Descrição obrigatória"}), 400
+
+    if valor is None:
+        return jsonify({"erro": "Valor obrigatório"}), 400
+
+    if estoque_inicial is None:
+        return jsonify({"erro": "Estoque inicial obrigatório"}), 400
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    try:
+        c.execute("""
+            INSERT INTO produtos
+            (descricao, valor, estoque_inicial, estoque_atual, imprimir_cupom)
+            VALUES (%s, %s, %s, %s, %s)
+            RETURNING *
+        """, (
+            descricao,
+            float(valor),
+            int(estoque_inicial),
+            int(estoque_inicial),
+            imprimir_cupom
+        ))
+
+        produto = c.fetchone()
+        conn.commit()
+
+        return jsonify({
+            "sucesso": True,
+            "produto": produto
+        })
+
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"erro": str(e)}), 500
+
+    finally:
+        conn.close()
+
 
 
