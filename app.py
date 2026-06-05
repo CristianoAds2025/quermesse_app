@@ -15,9 +15,12 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 from werkzeug.security import generate_password_hash, check_password_hash
 from io import BytesIO
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.secret_key = "quermesse_secret"
+
+CORS(app)
 
 # =========================
 # CONEXÃO POSTGRES
