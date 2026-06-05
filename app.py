@@ -1704,5 +1704,49 @@ def api_gerar_pix():
 
     return jsonify(pix)
 
+# =========================
+# API FECHAMENTO FLUTTER
+# =========================
+@app.route("/api/fechamento")
+def api_fechamento():
+
+    data = request.args.get("data")
+
+    if not data:
+        data = agora_amazonas().strftime("%Y-%m-%d")
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    c.execute("""
+        SELECT forma_pagamento,
+               SUM(valor_total) AS total,
+               SUM(COALESCE(troco_unico,0)) AS total_troco
+        FROM (
+            SELECT numero_venda,
+                   forma_pagamento,
+                   SUM(valor_total) AS valor_total,
+                   MAX(COALESCE(troco,0)) AS troco_unico
+            FROM vendas
+            WHERE DATE(data_venda) = %s
+            GROUP BY numero_venda, forma_pagamento
+        ) sub
+        GROUP BY forma_pagamento
+        ORDER BY forma_pagamento
+    """, (data,))
+
+    resultado = c.fetchall()
+    conn.close()
+
+    total_geral = sum(float(r["total"] or 0) for r in resultado)
+    total_troco = sum(float(r["total_troco"] or 0) for r in resultado)
+
+    return jsonify({
+        "data": data,
+        "resultado": resultado,
+        "total_geral": total_geral,
+        "total_troco": total_troco
+    })
+
 
 
