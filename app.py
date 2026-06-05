@@ -1585,5 +1585,109 @@ def api_produtos():
 # =========================
 @app.route("/api/salvar_venda", methods=["POST"])
 def api_salvar_venda():
-    return salvar_venda()
+
+    dados = request.get_json()
+
+    usuario_id = dados.get("usuario_id")
+    itens = dados.get("itens", [])
+    forma_pagamento = dados.get("forma_pagamento")
+    valor_recebido = dados.get("valor_recebido")
+    troco = dados.get("troco")
+
+    if not usuario_id:
+        return jsonify({"erro": "Usuário não informado"}), 400
+
+    if not itens:
+        return jsonify({"erro": "Nenhum item na venda"}), 400
+
+    if not forma_pagamento:
+        return jsonify({"erro": "Forma de pagamento obrigatória"}), 400
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    try:
+        c.execute("SELECT nextval('seq_numero_venda') AS numero")
+        numero_venda = c.fetchone()["numero"]
+
+        contagem = {}
+
+        for item in itens:
+            contagem[item["id"]] = contagem.get(item["id"], 0) + 1
+
+        alertas = []
+        venda_registro = []
+
+        for produto_id, quantidade in contagem.items():
+
+            c.execute("""
+                UPDATE produtos
+                SET estoque_atual = estoque_atual - %s
+                WHERE id = %s
+                AND estoque_atual >= %s
+            """, (quantidade, produto_id, quantidade))
+
+            if c.rowcount == 0:
+                conn.rollback()
+                return jsonify({"erro": "Estoque insuficiente"}), 400
+
+            c.execute("""
+                SELECT descricao, estoque_atual,
+                       COALESCE(estoque_minimo,5) as estoque_minimo
+                FROM produtos
+                WHERE id = %s
+            """, (produto_id,))
+
+            produto = c.fetchone()
+
+            venda_registro.append({
+                "descricao": produto["descricao"],
+                "quantidade": quantidade
+            })
+
+            if produto["estoque_atual"] <= produto["estoque_minimo"]:
+                alertas.append(
+                    f'{produto["descricao"]} com estoque baixo ({produto["estoque_atual"]})'
+                )
+
+        for i, item in enumerate(itens):
+
+            c.execute("""
+                INSERT INTO vendas
+                (numero_venda, produto_id, quantidade, valor_total,
+                 data_venda, forma_pagamento, valor_recebido, troco, usuario_id)
+                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            """, (
+                numero_venda,
+                item["id"],
+                1,
+                item["valor"],
+                agora_amazonas(),
+                forma_pagamento,
+                valor_recebido if i == 0 else None,
+                troco if i == 0 else None,
+                usuario_id
+            ))
+
+        conn.commit()
+
+        return jsonify({
+            "sucesso": True,
+            "numero_venda": numero_venda,
+            "data_venda": agora_amazonas().strftime("%d/%m/%Y %H:%M:%S"),
+            "forma_pagamento": forma_pagamento,
+            "valor_recebido": valor_recebido,
+            "troco": troco,
+            "alertas": alertas,
+            "registro": venda_registro
+        })
+
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"erro": str(e)}), 500
+
+    finally:
+        conn.close()
+
+
 
