@@ -1689,5 +1689,20 @@ def api_salvar_venda():
     finally:
         conn.close()
 
+# =========================
+# API GERAR PIX FLUTTER
+# =========================
+@app.route("/api/gerar_pix", methods=["POST"])
+def api_gerar_pix():
+    data = request.get_json()
+    valor = data.get("valor")
+
+    if not valor:
+        return jsonify({"erro": "Valor não informado"}), 400
+
+    pix = gerar_pix(valor)
+
+    return jsonify(pix)
+
 
 
