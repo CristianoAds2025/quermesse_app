@@ -2148,5 +2148,64 @@ def api_excluir_usuario(id):
     finally:
         conn.close()
 
+# =========================
+# API DASHBOARD AVANÇADO FLUTTER
+# =========================
+@app.route("/api/dashboard_avancado")
+def api_dashboard_avancado():
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    # Total geral
+    c.execute("""
+        SELECT COALESCE(SUM(valor_total),0) AS total
+        FROM vendas
+    """)
+    total_geral = c.fetchone()["total"]
+
+    # Total por forma de pagamento
+    c.execute("""
+        SELECT forma_pagamento,
+               SUM(valor_total) AS total
+        FROM vendas
+        GROUP BY forma_pagamento
+        ORDER BY forma_pagamento
+    """)
+    por_forma = c.fetchall()
+
+    # Produtos mais vendidos
+    c.execute("""
+        SELECT p.descricao,
+               SUM(v.quantidade) AS quantidade,
+               SUM(v.valor_total) AS total
+        FROM vendas v
+        JOIN produtos p ON v.produto_id = p.id
+        GROUP BY p.descricao
+        ORDER BY quantidade DESC
+    """)
+    mais_vendidos = c.fetchall()
+
+    # Vendas por operador
+    c.execute("""
+        SELECT u.nome_usuario,
+               COUNT(DISTINCT v.numero_venda) AS vendas,
+               SUM(v.valor_total) AS total
+        FROM vendas v
+        JOIN usuarios u ON u.id = v.usuario_id
+        GROUP BY u.nome_usuario
+        ORDER BY total DESC
+    """)
+    por_operador = c.fetchall()
+
+    conn.close()
+
+    return jsonify({
+        "total_geral": float(total_geral or 0),
+        "por_forma": por_forma,
+        "mais_vendidos": mais_vendidos,
+        "por_operador": por_operador
+    })
+
 
 
