@@ -1962,5 +1962,191 @@ def api_excluir_produto(id):
     finally:
         conn.close()
 
+# =========================
+# API LISTAR USUÁRIOS FLUTTER
+# =========================
+@app.route("/api/usuarios", methods=["GET"])
+def api_listar_usuarios():
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    c.execute("""
+        SELECT id, nome_usuario, usuario, perfil
+        FROM usuarios
+        ORDER BY nome_usuario ASC
+    """)
+
+    usuarios = c.fetchall()
+    conn.close()
+
+    return jsonify(usuarios)
+
+# =========================
+# API CADASTRAR USUÁRIO FLUTTER
+# =========================
+@app.route("/api/usuarios", methods=["POST"])
+def api_cadastrar_usuario():
+
+    dados = request.get_json()
+
+    nome_usuario = dados.get("nome_usuario")
+    usuario = dados.get("usuario")
+    senha = dados.get("senha")
+    perfil = dados.get("perfil", "usuario")
+
+    if not nome_usuario:
+        return jsonify({"erro": "Nome obrigatório"}), 400
+
+    if not usuario:
+        return jsonify({"erro": "Usuário obrigatório"}), 400
+
+    if not senha:
+        return jsonify({"erro": "Senha obrigatória"}), 400
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    try:
+        c.execute("SELECT id FROM usuarios WHERE usuario = %s", (usuario,))
+
+        if c.fetchone():
+            return jsonify({"erro": "Usuário já cadastrado"}), 400
+
+        senha_hash = generate_password_hash(senha)
+
+        c.execute("""
+            INSERT INTO usuarios
+            (nome_usuario, usuario, senha, perfil)
+            VALUES (%s, %s, %s, %s)
+            RETURNING id, nome_usuario, usuario, perfil
+        """, (
+            nome_usuario,
+            usuario,
+            senha_hash,
+            perfil
+        ))
+
+        novo_usuario = c.fetchone()
+        conn.commit()
+
+        return jsonify({
+            "sucesso": True,
+            "usuario": novo_usuario
+        })
+
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"erro": str(e)}), 500
+
+    finally:
+        conn.close()
+
+# =========================
+# API EDITAR USUÁRIO FLUTTER
+# =========================
+@app.route("/api/usuarios/<int:id>", methods=["PUT"])
+def api_editar_usuario(id):
+
+    dados = request.get_json()
+
+    nome_usuario = dados.get("nome_usuario")
+    usuario = dados.get("usuario")
+    senha = dados.get("senha")
+    perfil = dados.get("perfil", "usuario")
+
+    if not nome_usuario:
+        return jsonify({"erro": "Nome obrigatório"}), 400
+
+    if not usuario:
+        return jsonify({"erro": "Usuário obrigatório"}), 400
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    try:
+        c.execute("SELECT id FROM usuarios WHERE id = %s", (id,))
+
+        if not c.fetchone():
+            return jsonify({"erro": "Usuário não encontrado"}), 404
+
+        if senha:
+            senha_hash = generate_password_hash(senha)
+
+            c.execute("""
+                UPDATE usuarios
+                SET nome_usuario = %s,
+                    usuario = %s,
+                    senha = %s,
+                    perfil = %s
+                WHERE id = %s
+                RETURNING id, nome_usuario, usuario, perfil
+            """, (
+                nome_usuario,
+                usuario,
+                senha_hash,
+                perfil,
+                id
+            ))
+        else:
+            c.execute("""
+                UPDATE usuarios
+                SET nome_usuario = %s,
+                    usuario = %s,
+                    perfil = %s
+                WHERE id = %s
+                RETURNING id, nome_usuario, usuario, perfil
+            """, (
+                nome_usuario,
+                usuario,
+                perfil,
+                id
+            ))
+
+        usuario_atualizado = c.fetchone()
+        conn.commit()
+
+        return jsonify({
+            "sucesso": True,
+            "usuario": usuario_atualizado
+        })
+
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"erro": str(e)}), 500
+
+    finally:
+        conn.close()
+
+# =========================
+# API EXCLUIR USUÁRIO FLUTTER
+# =========================
+@app.route("/api/usuarios/<int:id>", methods=["DELETE"])
+def api_excluir_usuario(id):
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    try:
+        c.execute("SELECT id FROM usuarios WHERE id = %s", (id,))
+
+        if not c.fetchone():
+            return jsonify({"erro": "Usuário não encontrado"}), 404
+
+        c.execute("DELETE FROM usuarios WHERE id = %s", (id,))
+        conn.commit()
+
+        return jsonify({
+            "sucesso": True,
+            "mensagem": "Usuário excluído com sucesso"
+        })
+
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"erro": str(e)}), 500
+
+    finally:
+        conn.close()
+
 
 
