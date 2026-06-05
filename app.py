@@ -1554,3 +1554,29 @@ def api_login():
         "nome_usuario": user["nome_usuario"],
         "perfil": user["perfil"]
     })
+
+# =========================
+# API PRODUTOS
+# =========================
+@app.route("/api/produtos")
+def api_produtos():
+
+    conn = conectar()
+
+    c = conn.cursor(
+        cursor_factory=
+        psycopg2.extras.RealDictCursor
+    )
+
+    c.execute("""
+        SELECT *
+        FROM produtos
+        ORDER BY descricao
+    """)
+
+    produtos = c.fetchall()
+
+    conn.close()
+
+    return jsonify(produtos)
+
