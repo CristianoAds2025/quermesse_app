@@ -1748,5 +1748,61 @@ def api_fechamento():
         "total_troco": total_troco
     })
 
+# =========================
+# API RELATÓRIOS FLUTTER
+# =========================
+@app.route("/api/relatorios")
+def api_relatorios():
+
+    data_inicio = request.args.get("data_inicio")
+    data_fim = request.args.get("data_fim")
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    query = """
+        SELECT 
+            v.numero_venda,
+            MIN(v.data_venda AT TIME ZONE 'America/Manaus') AS data_venda,
+            v.forma_pagamento,
+            u.nome_usuario,
+            SUM(v.valor_total) AS total
+        FROM vendas v
+        JOIN usuarios u ON u.id = v.usuario_id
+        WHERE 1=1
+    """
+
+    params = []
+
+    if data_inicio:
+        query += " AND DATE(v.data_venda) >= %s"
+        params.append(data_inicio)
+
+    if data_fim:
+        query += " AND DATE(v.data_venda) <= %s"
+        params.append(data_fim)
+
+    query += """
+        GROUP BY 
+            v.numero_venda,
+            v.forma_pagamento,
+            u.nome_usuario
+        ORDER BY v.numero_venda DESC
+    """
+
+    c.execute(query, params)
+    vendas = c.fetchall()
+    conn.close()
+
+    total_geral = sum(float(v["total"] or 0) for v in vendas)
+
+    for v in vendas:
+        v["data_venda"] = v["data_venda"].strftime("%d/%m/%Y %H:%M")
+
+    return jsonify({
+        "vendas": vendas,
+        "total_geral": total_geral
+    })
+
 
 
