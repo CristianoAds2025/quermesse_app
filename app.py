@@ -1858,5 +1858,109 @@ def api_cadastrar_produto():
     finally:
         conn.close()
 
+# =========================
+# API EDITAR PRODUTO FLUTTER
+# =========================
+@app.route("/api/produtos/<int:id>", methods=["PUT"])
+def api_editar_produto(id):
+
+    dados = request.get_json()
+
+    descricao = dados.get("descricao")
+    valor = dados.get("valor")
+    estoque_inicial = dados.get("estoque_inicial")
+    imprimir_cupom = dados.get("imprimir_cupom", False)
+
+    if not descricao:
+        return jsonify({"erro": "Descrição obrigatória"}), 400
+
+    if valor is None:
+        return jsonify({"erro": "Valor obrigatório"}), 400
+
+    if estoque_inicial is None:
+        return jsonify({"erro": "Estoque inicial obrigatório"}), 400
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    try:
+        c.execute("""
+            UPDATE produtos
+            SET descricao = %s,
+                valor = %s,
+                estoque_inicial = %s,
+                estoque_atual = %s,
+                imprimir_cupom = %s
+            WHERE id = %s
+            RETURNING *
+        """, (
+            descricao,
+            float(valor),
+            int(estoque_inicial),
+            int(estoque_inicial),
+            imprimir_cupom,
+            id
+        ))
+
+        produto = c.fetchone()
+
+        if not produto:
+            conn.rollback()
+            return jsonify({"erro": "Produto não encontrado"}), 404
+
+        conn.commit()
+
+        return jsonify({
+            "sucesso": True,
+            "produto": produto
+        })
+
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"erro": str(e)}), 500
+
+    finally:
+        conn.close()
+
+# =========================
+# API EXCLUIR PRODUTO FLUTTER
+# =========================
+@app.route("/api/produtos/<int:id>", methods=["DELETE"])
+def api_excluir_produto(id):
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    try:
+        c.execute("SELECT id FROM produtos WHERE id = %s", (id,))
+        produto = c.fetchone()
+
+        if not produto:
+            conn.close()
+            return jsonify({"erro": "Produto não encontrado"}), 404
+
+        c.execute("SELECT 1 FROM vendas WHERE produto_id = %s LIMIT 1", (id,))
+
+        if c.fetchone():
+            conn.close()
+            return jsonify({
+                "erro": "Não é possível excluir produto que já possui vendas"
+            }), 400
+
+        c.execute("DELETE FROM produtos WHERE id = %s", (id,))
+        conn.commit()
+
+        return jsonify({
+            "sucesso": True,
+            "mensagem": "Produto excluído com sucesso"
+        })
+
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"erro": str(e)}), 500
+
+    finally:
+        conn.close()
+
 
 
