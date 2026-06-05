@@ -1580,3 +1580,10 @@ def api_produtos():
 
     return jsonify(produtos)
 
+# =========================
+# API SALVAR VENDA FLUTTER
+# =========================
+@app.route("/api/salvar_venda", methods=["POST"])
+def api_salvar_venda():
+    return salvar_venda()
+
