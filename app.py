@@ -1498,3 +1498,56 @@ def resetar_quermesse():
 @app.route("/health")
 def health():
     return "OK", 200
+
+# =========================
+# API LOGIN
+# =========================
+
+@app.route("/api/login", methods=["POST"])
+def api_login():
+
+    dados = request.get_json()
+
+    usuario = dados.get("usuario")
+    senha = dados.get("senha")
+
+    conn = conectar()
+
+    if not conn:
+        return jsonify({
+            "sucesso": False,
+            "mensagem": "Erro de conexão"
+        }), 500
+
+    c = conn.cursor(
+        cursor_factory=psycopg2.extras.RealDictCursor
+    )
+
+    c.execute(
+        "SELECT * FROM usuarios WHERE usuario=%s",
+        (usuario,)
+    )
+
+    user = c.fetchone()
+
+    conn.close()
+
+    if not user:
+        return jsonify({
+            "sucesso": False,
+            "mensagem": "Usuário não encontrado"
+        }), 401
+
+    if not check_password_hash(user["senha"], senha):
+        return jsonify({
+            "sucesso": False,
+            "mensagem": "Senha inválida"
+        }), 401
+
+    return jsonify({
+        "sucesso": True,
+        "usuario_id": user["id"],
+        "usuario": user["usuario"],
+        "nome_usuario": user["nome_usuario"],
+        "perfil": user["perfil"]
+    })
