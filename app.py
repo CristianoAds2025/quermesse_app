@@ -2437,4 +2437,54 @@ def api_itens_venda(numero_venda):
 
     return jsonify(itens)
 
+# =========================
+# API EXCLUIR VENDA FLUTTER
+# =========================
+@app.route("/api/excluir_venda/<int:numero_venda>", methods=["DELETE"])
+def api_excluir_venda(numero_venda):
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    try:
+        c.execute("""
+            SELECT produto_id, quantidade
+            FROM vendas
+            WHERE numero_venda = %s
+        """, (numero_venda,))
+
+        itens = c.fetchall()
+
+        if not itens:
+            return jsonify({"erro": "Venda não encontrada"}), 404
+
+        for item in itens:
+            c.execute("""
+                UPDATE produtos
+                SET estoque_atual = estoque_atual + %s
+                WHERE id = %s
+            """, (
+                item["quantidade"],
+                item["produto_id"]
+            ))
+
+        c.execute("""
+            DELETE FROM vendas
+            WHERE numero_venda = %s
+        """, (numero_venda,))
+
+        conn.commit()
+
+        return jsonify({
+            "sucesso": True,
+            "mensagem": "Venda excluída com sucesso"
+        })
+
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"erro": str(e)}), 500
+
+    finally:
+        conn.close()
+
 
