@@ -2410,4 +2410,31 @@ def api_relatorio_vendas_excel():
 
     return send_file(file_path, as_attachment=True)
 
+# =========================
+# API ITENS DA VENDA FLUTTER
+# =========================
+@app.route("/api/itens_venda/<int:numero_venda>")
+def api_itens_venda(numero_venda):
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    c.execute("""
+        SELECT 
+            p.descricao,
+            SUM(v.quantidade) AS quantidade,
+            SUM(v.valor_total) AS valor_total,
+            TO_CHAR(MIN(v.data_venda), 'DD/MM/YYYY HH24:MI:SS') AS data_venda
+        FROM vendas v
+        JOIN produtos p ON p.id = v.produto_id
+        WHERE v.numero_venda = %s
+        GROUP BY p.descricao
+        ORDER BY p.descricao
+    """, (numero_venda,))
+
+    itens = c.fetchall()
+    conn.close()
+
+    return jsonify(itens)
+
 
