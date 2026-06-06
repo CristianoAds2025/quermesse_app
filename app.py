@@ -2208,18 +2208,206 @@ def api_dashboard_avancado():
     })
 
 # =========================
-# API PDF RELATÓRIO FLUTTER
+# API PDF RELATÓRIO FLUTTER SEM SESSÃO
 # =========================
 @app.route("/api/relatorio_vendas_pdf")
 def api_relatorio_vendas_pdf():
-    return relatorio_vendas_pdf()
+
+    data_inicio = request.args.get("data_inicio")
+    data_fim = request.args.get("data_fim")
+
+    conn = conectar()
+    c = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    query = """
+        SELECT 
+            v.numero_venda,
+            MIN(v.data_venda AT TIME ZONE 'America/Manaus') as data_venda,
+            SUM(v.valor_total) as valor_total,
+            v.forma_pagamento,
+            u.nome_usuario
+        FROM vendas v
+        JOIN usuarios u ON u.id = v.usuario_id
+        WHERE 1=1
+    """
+
+    params = []
+
+    if data_inicio:
+        query += " AND DATE(v.data_venda) >= %s"
+        params.append(data_inicio)
+
+    if data_fim:
+        query += " AND DATE(v.data_venda) <= %s"
+        params.append(data_fim)
+
+    query += """
+        GROUP BY v.numero_venda, v.forma_pagamento, u.nome_usuario
+        ORDER BY v.numero_venda DESC
+    """
+
+    c.execute(query, params)
+    vendas = c.fetchall()
+    conn.close()
+
+    caminho = "relatorio_vendas_flutter.pdf"
+    elementos = []
+    styles = getSampleStyleSheet()
+
+    elementos.append(Paragraph("Relatório de Vendas", styles["Title"]))
+    elementos.append(Spacer(1, 20))
+
+    dados = [["Venda", "Data", "Pagamento", "Usuário", "Valor"]]
+    total = 0
+
+    for v in vendas:
+        dados.append([
+            v["numero_venda"],
+            v["data_venda"].strftime("%d/%m/%Y %H:%M"),
+            v["forma_pagamento"],
+            v["nome_usuario"],
+            f"R$ {v['valor_total']:.2f}"
+        ])
+        total += v["valor_total"]
+
+    dados.append(["", "", "", "TOTAL", f"R$ {total:.2f}"])
+
+    tabela = Table(dados, colWidths=[60, 120, 110, 120, 80])
+    tabela.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.lightgrey),
+        ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+        ('ALIGN', (0,0), (-1,0), 'CENTER'),
+        ('GRID', (0,0), (-1,-1), 1, colors.black),
+        ('FONTNAME', (3,-1), (4,-1), 'Helvetica-Bold'),
+        ('BACKGROUND', (3,-1), (4,-1), colors.lightgrey),
+    ]))
+
+    elementos.append(tabela)
+
+    doc = SimpleDocTemplate(caminho, pagesize=A4)
+    doc.build(elementos)
+
+    return send_file(caminho, as_attachment=True)
 
 # =========================
-# API EXCEL RELATÓRIO FLUTTER
+# API EXCEL RELATÓRIO FLUTTER SEM SESSÃO
 # =========================
 @app.route("/api/relatorio_vendas_excel")
 def api_relatorio_vendas_excel():
-    return relatorio_vendas_excel()
 
+    data_inicio = request.args.get("data_inicio")
+    data_fim = request.args.get("data_fim")
+
+    conn = conectar()
+    c = conn.cursor()
+
+    sql = """
+        SELECT 
+            v.numero_venda,
+            MIN(v.data_venda AT TIME ZONE 'America/Manaus') AS data_venda,
+            v.forma_pagamento,
+            u.nome_usuario,
+            SUM(v.valor_total) AS total
+        FROM vendas v
+        JOIN usuarios u ON u.id = v.usuario_id
+        WHERE 1=1
+    """
+
+    params = []
+
+    if data_inicio:
+        sql += " AND DATE(v.data_venda) >= %s"
+        params.append(data_inicio)
+
+    if data_fim:
+        sql += " AND DATE(v.data_venda) <= %s"
+        params.append(data_fim)
+
+    sql += """
+        GROUP BY 
+            v.numero_venda, 
+            v.forma_pagamento, 
+            u.nome_usuario
+        ORDER BY v.numero_venda DESC
+    """
+
+    c.execute(sql, params)
+    vendas = c.fetchall()
+    conn.close()
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Relatório de Vendas"
+
+    headers = ["ID Venda", "Data", "Forma Pagamento", "Valor Total", "Usuário"]
+    ws.append(headers)
+
+    bold_font = Font(bold=True)
+    fill_gray = PatternFill(
+        start_color="DDDDDD",
+        end_color="DDDDDD",
+        fill_type="solid"
+    )
+
+    for col in range(1, len(headers) + 1):
+        cell = ws.cell(row=1, column=col)
+        cell.font = bold_font
+        cell.fill = fill_gray
+
+    total_geral = 0
+
+    for v in vendas:
+        valor = float(v[4])
+        total_geral += valor
+
+        ws.append([
+            v[0],
+            v[1].strftime("%d/%m/%Y %H:%M:%S"),
+            v[2],
+            valor,
+            v[3]
+        ])
+
+    linha_total = ws.max_row + 1
+    ws.cell(row=linha_total, column=1).value = "Total das vendas"
+    ws.cell(row=linha_total, column=4).value = total_geral
+
+    ws.merge_cells(
+        start_row=linha_total,
+        start_column=1,
+        end_row=linha_total,
+        end_column=3
+    )
+
+    ws.merge_cells(
+        start_row=linha_total,
+        start_column=4,
+        end_row=linha_total,
+        end_column=5
+    )
+
+    ws.cell(row=linha_total, column=1).font = Font(bold=True)
+    ws.cell(row=linha_total, column=4).font = Font(bold=True)
+
+    ws.cell(row=linha_total, column=1).alignment = Alignment(horizontal="right")
+    ws.cell(row=linha_total, column=4).alignment = Alignment(horizontal="center")
+
+    for column_cells in ws.columns:
+        max_length = 0
+        column_letter = column_cells[0].column_letter
+
+        for cell in column_cells:
+            try:
+                if cell.value:
+                    max_length = max(max_length, len(str(cell.value)))
+            except:
+                pass
+
+        ws.column_dimensions[column_letter].width = max_length + 2
+
+    file_path = "Relatorio_Vendas_Flutter.xlsx"
+    wb.save(file_path)
+
+    return send_file(file_path, as_attachment=True)
 
 
