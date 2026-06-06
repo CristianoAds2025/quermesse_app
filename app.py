@@ -2207,5 +2207,19 @@ def api_dashboard_avancado():
         "por_operador": por_operador
     })
 
+# =========================
+# API PDF RELATÓRIO FLUTTER
+# =========================
+@app.route("/api/relatorio_vendas_pdf")
+def api_relatorio_vendas_pdf():
+    return relatorio_vendas_pdf()
+
+# =========================
+# API EXCEL RELATÓRIO FLUTTER
+# =========================
+@app.route("/api/relatorio_vendas_excel")
+def api_relatorio_vendas_excel():
+    return relatorio_vendas_excel()
+
 
 
