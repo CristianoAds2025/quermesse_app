@@ -2487,4 +2487,45 @@ def api_excluir_venda(numero_venda):
     finally:
         conn.close()
 
+# =========================
+# API RESETAR QUERMESSE FLUTTER
+# =========================
+@app.route("/api/resetar_quermesse", methods=["POST"])
+def api_resetar_quermesse():
+
+    conn = conectar()
+
+    if not conn:
+        return jsonify({
+            "erro": "Erro ao conectar no banco"
+        }), 500
+
+    cur = conn.cursor()
+
+    try:
+        cur.execute("""
+            TRUNCATE TABLE vendas RESTART IDENTITY CASCADE;
+        """)
+
+        cur.execute("""
+            UPDATE produtos
+            SET estoque_atual = estoque_inicial
+        """)
+
+        conn.commit()
+
+        return jsonify({
+            "sucesso": True,
+            "mensagem": "Sistema resetado com sucesso"
+        })
+
+    except Exception as e:
+        conn.rollback()
+        return jsonify({
+            "erro": str(e)
+        }), 500
+
+    finally:
+        conn.close()
+
 
