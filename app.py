@@ -2422,13 +2422,13 @@ def api_itens_venda(numero_venda):
     c.execute("""
         SELECT 
             p.descricao,
-            SUM(v.quantidade) AS quantidade,
-            SUM(v.valor_total) AS valor_total,
-            TO_CHAR(MIN(v.data_venda), 'DD/MM/YYYY HH24:MI:SS') AS data_venda
+            v.quantidade,
+            v.valor_total,
+            p.imprimir_cupom,
+            TO_CHAR(v.data_venda, 'DD/MM/YYYY HH24:MI:SS') AS data_venda
         FROM vendas v
         JOIN produtos p ON p.id = v.produto_id
         WHERE v.numero_venda = %s
-        GROUP BY p.descricao
         ORDER BY p.descricao
     """, (numero_venda,))
 
