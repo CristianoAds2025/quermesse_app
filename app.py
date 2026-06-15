@@ -2528,4 +2528,69 @@ def api_resetar_quermesse():
     finally:
         conn.close()
 
+# =========================
+# NOTIFICAÇÕES
+# =========================
+@app.route("/api/notificacoes", methods=["GET"])
+def api_listar_notificacoes():
+    conn = conectar()
+    cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    cur.execute("""
+        SELECT
+            id,
+            titulo,
+            mensagem,
+            TO_CHAR(data_envio, 'DD/MM/YYYY HH24:MI') AS data_envio
+        FROM notificacoes
+        ORDER BY id DESC
+    """)
+
+    notificacoes = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return jsonify(notificacoes)
+
+
+@app.route("/api/notificacoes", methods=["POST"])
+def api_criar_notificacao():
+    dados = request.get_json()
+
+    titulo = dados.get("titulo")
+    mensagem = dados.get("mensagem")
+
+    if not titulo or not mensagem:
+        return jsonify({
+            "sucesso": False,
+            "erro": "Título e mensagem são obrigatórios"
+        }), 400
+
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        INSERT INTO notificacoes
+        (
+            titulo,
+            mensagem
+        )
+        VALUES
+        (
+            %s,
+            %s
+        )
+    """, (titulo, mensagem))
+
+    conn.commit()
+
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Notificação enviada com sucesso"
+    })
+
 
