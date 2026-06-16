@@ -2617,5 +2617,53 @@ def api_marcar_notificacao_lida(notificacao_id):
         "sucesso": True,
         "mensagem": "Notificação marcada como lida"
     })
+    
+# =========================
+# TOKEN CELULARES
+# =========================
+@app.route("/api/tokens_push", methods=["POST"])
+def api_salvar_token_push():
+    dados = request.get_json()
+
+    token = dados.get("token")
+    plataforma = dados.get("plataforma", "android")
+
+    if not token:
+        return jsonify({
+            "sucesso": False,
+            "erro": "Token não informado"
+        }), 400
+
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        INSERT INTO tokens_push
+        (
+            token,
+            plataforma,
+            data_atualizacao
+        )
+        VALUES
+        (
+            %s,
+            %s,
+            CURRENT_TIMESTAMP
+        )
+        ON CONFLICT (token)
+        DO UPDATE SET
+            plataforma = EXCLUDED.plataforma,
+            data_atualizacao = CURRENT_TIMESTAMP
+    """, (token, plataforma))
+
+    conn.commit()
+
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Token salvo com sucesso"
+    })
 
 
