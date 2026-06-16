@@ -2541,6 +2541,7 @@ def api_listar_notificacoes():
             id,
             titulo,
             mensagem,
+            lida,
             TO_CHAR(data_envio, 'DD/MM/YYYY HH24:MI') AS data_envio
         FROM notificacoes
         ORDER BY id DESC
@@ -2591,6 +2592,30 @@ def api_criar_notificacao():
     return jsonify({
         "sucesso": True,
         "mensagem": "Notificação enviada com sucesso"
+    })
+
+# =========================
+# NOTIFICAÇÕES LIDA
+# =========================
+@app.route("/api/notificacoes/<int:notificacao_id>/lida", methods=["PUT"])
+def api_marcar_notificacao_lida(notificacao_id):
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        UPDATE notificacoes
+        SET lida = TRUE
+        WHERE id = %s
+    """, (notificacao_id,))
+
+    conn.commit()
+
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Notificação marcada como lida"
     })
 
 
