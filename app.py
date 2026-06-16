@@ -16,8 +16,17 @@ from openpyxl.styles import Font, PatternFill, Alignment
 from werkzeug.security import generate_password_hash, check_password_hash
 from io import BytesIO
 from flask_cors import CORS
+import json
+import firebase_admin
+from firebase_admin import credentials, messaging
 
 app = Flask(__name__)
+firebase_json = os.getenv("FIREBASE_CREDENTIALS_JSON")
+
+if firebase_json and not firebase_admin._apps:
+    cred_dict = json.loads(firebase_json)
+    cred = credentials.Certificate(cred_dict)
+    firebase_admin.initialize_app(cred)
 app.secret_key = "quermesse_secret"
 
 CORS(app)
@@ -43,6 +52,54 @@ def conectar():
 
 def agora_amazonas():
     return datetime.now(ZoneInfo("America/Manaus"))
+
+# =========================
+# ENVIAR NOTIFICAÇÕES
+# =========================
+def enviar_push_para_todos(titulo, mensagem):
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT token
+        FROM tokens_push
+    """)
+
+    tokens = [linha[0] for linha in cur.fetchall()]
+
+    cur.close()
+    conn.close()
+
+    if not tokens:
+        return {
+            "enviadas": 0,
+            "erro": "Nenhum token cadastrado"
+        }
+
+    enviadas = 0
+    erros = 0
+
+    for token in tokens:
+        try:
+            msg = messaging.Message(
+                notification=messaging.Notification(
+                    title=titulo,
+                    body=mensagem,
+                ),
+                token=token,
+            )
+
+            messaging.send(msg)
+            enviadas += 1
+
+        except Exception as e:
+            print("Erro ao enviar push:", e)
+            erros += 1
+
+    return {
+        "enviadas": enviadas,
+        "erros": erros
+    }
     
 # =========================
 # LOGIN
@@ -2585,13 +2642,15 @@ def api_criar_notificacao():
     """, (titulo, mensagem))
 
     conn.commit()
+    resultado_push = enviar_push_para_todos(titulo, mensagem)
 
     cur.close()
     conn.close()
 
     return jsonify({
         "sucesso": True,
-        "mensagem": "Notificação enviada com sucesso"
+        "mensagem": "Notificação enviada com sucesso",
+        "push": resultado_push
     })
 
 # =========================
