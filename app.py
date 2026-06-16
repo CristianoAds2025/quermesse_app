@@ -57,6 +57,10 @@ def agora_amazonas():
 # ENVIAR NOTIFICAÇÕES
 # =========================
 def enviar_push_para_todos(titulo, mensagem):
+    print("=== INICIANDO ENVIO PUSH ===")
+    print("Título:", titulo)
+    print("Mensagem:", mensagem)
+
     conn = conectar()
     cur = conn.cursor()
 
@@ -70,17 +74,24 @@ def enviar_push_para_todos(titulo, mensagem):
     cur.close()
     conn.close()
 
+    print("TOTAL DE TOKENS:", len(tokens))
+
     if not tokens:
+        print("Nenhum token cadastrado")
         return {
             "enviadas": 0,
-            "erro": "Nenhum token cadastrado"
+            "erros": 0,
+            "mensagem": "Nenhum token cadastrado"
         }
 
     enviadas = 0
     erros = 0
+    detalhes_erros = []
 
     for token in tokens:
         try:
+            print("Enviando para token:", token[:20])
+
             msg = messaging.Message(
                 notification=messaging.Notification(
                     title=titulo,
@@ -89,17 +100,27 @@ def enviar_push_para_todos(titulo, mensagem):
                 token=token,
             )
 
-            messaging.send(msg)
+            resposta = messaging.send(msg)
+
+            print("Push enviado com sucesso:", resposta)
+
             enviadas += 1
 
         except Exception as e:
-            print("Erro ao enviar push:", e)
+            print("Erro ao enviar push:", str(e))
             erros += 1
+            detalhes_erros.append(str(e))
 
-    return {
+    resultado = {
         "enviadas": enviadas,
-        "erros": erros
+        "erros": erros,
+        "detalhes_erros": detalhes_erros
     }
+
+    print("RESULTADO PUSH:", resultado)
+    print("=== FIM ENVIO PUSH ===")
+
+    return resultado
     
 # =========================
 # LOGIN
