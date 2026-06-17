@@ -2752,6 +2752,7 @@ def api_salvar_token_push():
 @app.route("/api/dizimistas", methods=["POST"])
 def api_cadastrar_dizimista():
     dados = request.get_json()
+    print("DADOS RECEBIDOS DIZIMISTA:", dados)
 
     nome = dados.get("nome")
     email = dados.get("email")
@@ -2798,6 +2799,7 @@ def api_cadastrar_dizimista():
     ))
 
     conn.commit()
+    print("DIZIMISTA SALVO COM SUCESSO:", nome)
     cur.close()
     conn.close()
 
