@@ -2607,7 +2607,7 @@ def api_resetar_quermesse():
         conn.close()
 
 # =========================
-# NOTIFICAÇÕES
+# API NOTIFICAÇÕES
 # =========================
 @app.route("/api/notificacoes", methods=["GET"])
 def api_listar_notificacoes():
@@ -2675,7 +2675,7 @@ def api_criar_notificacao():
     })
 
 # =========================
-# NOTIFICAÇÕES LIDA
+# API NOTIFICAÇÕES LIDA
 # =========================
 @app.route("/api/notificacoes/<int:notificacao_id>/lida", methods=["PUT"])
 def api_marcar_notificacao_lida(notificacao_id):
@@ -2746,4 +2746,63 @@ def api_salvar_token_push():
         "mensagem": "Token salvo com sucesso"
     })
 
+# =========================
+# API DIZIMISTAS
+# =========================
+@app.route("/api/dizimistas", methods=["POST"])
+def api_cadastrar_dizimista():
+    dados = request.get_json()
+
+    nome = dados.get("nome")
+    email = dados.get("email")
+    data_nascimento = dados.get("data_nascimento")
+    whatsapp = dados.get("whatsapp")
+    casado = dados.get("casado")
+    nome_conjuge = dados.get("nome_conjuge")
+    data_nascimento_conjuge = dados.get("data_nascimento_conjuge")
+    rua_avenida = dados.get("rua_avenida")
+    numero = dados.get("numero")
+
+    if not nome or not data_nascimento or not whatsapp or casado is None or not rua_avenida or not numero:
+        return jsonify({
+            "sucesso": False,
+            "erro": "Preencha todos os campos obrigatórios"
+        }), 400
+
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        INSERT INTO dizimistas (
+            nome,
+            email,
+            data_nascimento,
+            whatsapp,
+            casado,
+            nome_conjuge,
+            data_nascimento_conjuge,
+            rua_avenida,
+            numero
+        )
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)
+    """, (
+        nome,
+        email,
+        data_nascimento,
+        whatsapp,
+        casado,
+        nome_conjuge,
+        data_nascimento_conjuge,
+        rua_avenida,
+        numero
+    ))
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Cadastro realizado com sucesso"
+    })
 
