@@ -1,0 +1,37 @@
+[
+  {
+    "dia": "DOMINGO",
+    "horarios": [
+      {
+        "hora": "08h",
+        "atividade": "SANTA MISSA \n(1°, 2º, 4º e 5º domingo de cada mês)"
+      }
+    ]
+  },
+  {
+    "dia": "SÁBADO",
+    "horarios": [
+      {
+        "hora": "19h30",
+        "atividade": "SANTA MISSA \n(3º sábado de cada mês)"
+      },
+      {
+        "hora": "15h",
+        "atividade": "CATEQUESE"
+      },
+      {
+        "hora": "16h",
+        "atividade": "PREPARAÇÃO DA LITURGIA"
+      }
+    ]
+  },
+  {
+    "dia": "QUINTA-FEIRA",
+    "horarios": [
+      {
+        "hora": "18h",
+        "atividade": "ADORAÇÃO AO SANTÍSSIMO"
+      }
+    ]
+  }
+]

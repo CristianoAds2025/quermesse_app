@@ -1,0 +1,642 @@
+[
+  {
+    "titulo": "Ave Maria",
+    "categoria": "Oração",
+    "texto": "Ave Maria, cheia de graça, o Senhor é convosco, bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós pecadores, agora e na hora da nossa morte. Amém"
+  },
+  {
+    "titulo": "Cordeiro de Deus",
+    "categoria": "Oração",
+    "texto": "Cordeiro de Deus, que tirais o pecado do mundo, tende piedade de nós.\nCordeiro de Deus, que tirais o pecado do mundo, tende piedade de nós.\nCordeiro de Deus, que tirais o pecado do mundo, dai-nos a paz."
+  },
+  {
+    "titulo": "Credo",
+    "categoria": "Oração",
+    "texto": "Creio em Deus Pai todo-poderoso, criador do céu e da terra; e em Jesus  Cristo, seu único Filho, Nosso Senhor; que foi concebido pelo poder do Espírito Santo; nasceu na Virgem Maria, padeceu sob Pôncio Pilatos, foi crucificado morto e sepultado; desceu à mansão dos mortos; ressuscitou ao terceiro dia; subiu aos céus, está sentado à direita de Deus Pai todo-poderoso, donde há de vir a julgar os vivos e os mortos;   creio no Espírito Santo, na santa Igreja Católica, na comunhão dos santos, na remissão dos pecados, na ressurreição da carne, na vida eterna. Amém"
+  },
+  {
+    "titulo": "Glória a Deus nas alturas",
+    "categoria": "Oração",
+    "texto": "Glória a Deus nas alturas e paz na terra aos homens por Ele amados. Senhor Deus, Rei dos céus, Deus Pai todo-poderoso: nós Vos louvamos, nós Vos bendizemos, nós Vos adoramos, nós Vos glorificamos, nós Vos damos graças, por vossa imensa glória. Senhor Jesus Cristo, Filho Unigénito, Senhor Deus, Cordeiro de Deus, Filho de Deus Pai: Vós que tirais o pecado do mundo, tende piedade de nós; Vós que tirais o pecado do mundo, acolhei a nossa súplica; Vós que estais à direita do Pai, tende piedade de nós. Só Vós sois o Santo; só Vós, o Senhor; só Vós, o Altíssimo, Jesus Cristo; com o Espírito Santo na glória de Deus Pai. Amém"
+  },
+  {
+    "titulo": "Glória ao Pai",
+    "categoria": "Oração",
+    "texto": "Glória ao Pai e ao Filho e ao Espírito Santo. Como era, no princípio, agora e sempre. Amém"
+  },
+  {
+    "titulo": "Pai Nosso",
+    "categoria": "Oração",
+    "texto": "Pai Nosso que estais nos Céus, santificado seja o vosso Nome, venha a nós o vosso Reino, seja feita a vossa vontade assim na terra como no Céu. O pão nosso de cada dia nos dai hoje, perdoai-nos as nossas ofensas assim como nós perdoamos a quem nos tem ofendido, e não nos deixeis cair em tentação, mas livrai-nos do Mal. Amém"
+  },
+  {
+    "titulo": "Salve Rainha",
+    "categoria": "Oração",
+    "texto": "Salve, Rainha, Mãe de misericórdia, vida, doçura e esperança nossa, salve! A vós bradamos, os degredados filhos de Eva; a vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois advogada nossa, esses vossos olhos misericordiosos a nós volvei; e depois deste desterro nos mostrai Jesus, bendito fruto do vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria.\nRogai por nós, santa Mãe de Deus.\nR: Para que sejamos dignos das promessas de Cristo."
+  },
+  {
+    "titulo": "Santo Anjo",
+    "categoria": "Oração",
+    "texto": "Santo Anjo do Senhor, meu zeloso guardador, se a ti me confiou a piedade divina, sempre me rege, me guarda, me governa me ilumina. Amém"
+  },
+  {
+    "titulo": "Sinal da Cruz",
+    "categoria": "Oração",
+    "texto": "Pelo sinal da santa cruz, livrai-nos, Deus nosso Senhor, dos nossos inimigos.\nEm nome do Pai, e do Filho e do Espírito Santo. Amém"
+  },
+  {
+    "titulo": "Vinde Espírito Santo",
+    "categoria": "Oração",
+    "texto": "Vinde Espírito Santo, enchei os corações dos vossos fiéis e acendei neles o fogo do Vosso Amor. Enviai o Vosso Espírito e tudo será criado e renovareis a face da terra.\nOremos: Ó Deus que instruíste os corações dos vossos fiéis, com a luz do Espírito Santo, fazei que apreciemos retamente todas as coisas segundo o mesmo Espírito e gozemos da sua consolação.Por Cristo Senhor Nosso. Amém"
+  },
+  {
+    "titulo": "A Deus uno e trino",
+    "categoria": "Oração",
+    "texto": "1.\nAo Deus único, rei dos séculos imortal e invisível, honra e glória pelos séculos dos séculos. Amém. —\n2.\nBendita seja a santa e indivisa Trindade, agora e sempre, por todos os séculos dos séculos. Amém. —\n3.\nSanto Deus, santo forte, santo imortal, tende piedade de nós. —\n4.\nSantíssima Trindade, tende piedade de nós; Senhor, sede propício aos nossos pecados; Senhor, perdoai-nos as nossas iniquidades, por causa do vosso nome.\n1."
+  },
+  {
+    "titulo": "“Adoro te devote”",
+    "categoria": "Oração",
+    "texto": "Eu te adoro, ó Cristo, Deus no santo altar,"
+  },
+  {
+    "titulo": "À Imaculada Conceição",
+    "categoria": "Oração",
+    "texto": "Deus, que pela Imaculada Conceição da Virgem Maria preparastes uma digna morada para o vosso Filho e, em atenção aos méritos futuros da morte de Cristo, a preservastes de toda mancha, concedei-nos, por sua intercessão, a graça de chegarmos purificados junto de vós. Pelo mesmo Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "A Jesus crucificado",
+    "categoria": "Oração",
+    "texto": "Eis-me aqui, ó bom e dulcíssimo Jesus. De joelhos ante a vossa divina presença, eu vos peço e suplico, com o mais ardente fervor de minha alma, que vos digneis gravar em meu coração vivos sentimentos de fé, de esperança e de caridade, verdadeiro arrependimento dos meus pecados e vontade firmíssima de os emendar, enquanto eu, com grande afeto e dor de alma, considero e medito as vossas cinco chagas, tendo diante dos olhos o que já o santo profeta Davi dizia de vós, ó bom Jesus: “Trespassaram as minhas mãos e os meus pés; contaram todos os meus ossos” (\nSl\n22,17-18\n). Amém."
+  },
+  {
+    "titulo": "Alma de Cristo",
+    "categoria": "Oração",
+    "texto": "Alma de Cristo, santificai-me.\nCorpo de Cristo, salvai-me.\nSangue de Cristo, inebriai-me.\nÁgua do lado de Cristo, lavai-me.\nPaixão de Cristo, confortai-me.\nÓ bom Jesus, ouvi-me.\nDentro de vossas chagas escondei-me.\nNão permitais que me separe de vós.\nDo espírito maligno defendei-me.\nNa hora da morte chamai-me.\nE mandai-me ir para vós,\npara que com os vossos santos vos louve,\npor todos os séculos dos séculos.\nAmém."
+  },
+  {
+    "titulo": "“Alma Redemptoris Mater” (Advento)",
+    "categoria": "Oração",
+    "texto": "O Mãe do Redentor, do céu ó porta,\nao povo que caiu, socorre e exorta,\npois busca levantar-se, Virgem pura,\nnascendo o Criador da criatura:\ntem piedade de nós e ouve, suave,\no anjo te saudando com seu\nAve\n!\n℣\n. O anjo do Senhor anunciou a Maria.\n℟\n. E ela concebeu do Espírito Santo.\nOremos\nInfundi, Senhor, nós vos pedimos, em nossas almas a vossa graça, para que nós, que conhecemos pela anunciação do Anjo a encarnação de Jesus Cristo, vosso Filho, cheguemos por sua paixão e sua cruz à glória da ressurreição. Pelo mesmo Cristo, Senhor nosso. Amém.\nAlma Redemptoris Mater, quæ pervia cæli\nporta manes et stella maris, succurre cadenti\nsurgere qui curat populo. Tu quæ genuisti,\nnatura mirante, tuum sanctum Genitorem,\nVirgo prius ac posterius, Gabrielis ab ore\nsumens illud\nAve\n, peccatorum miserére.\n℣\n. Angelus Domini nuntiavit Mariæ.\n℟"
+  },
+  {
+    "titulo": "“Angelus” (Tempo Comum)",
+    "categoria": "Oração",
+    "texto": "℣. O anjo do Senhor anunciou a Maria.\n℟. E ela concebeu do Espírito Santo.\nAve-Maria\n.\n℣. Eis aqui a escrava do Senhor.\n℟. Faça-se em mim segundo a vossa palavra.\nAve-Maria\n.\n℣. E o Verbo se fez carne.\n℟. E habitou entre nós.\nAve-Maria\n.\n℣. Rogai por nós, santa Mãe de Deus.\n℟. Para que sejamos dignos das promessas de Cristo.\nOremos\nInfundi, Senhor, nós vos pedimos, em nossas almas a vossa graça, para que nós, que conhecemos pela anunciação do Anjo a encarnação de Jesus Cristo, vosso Filho, cheguemos por sua paixão e sua cruz à glória da ressurreição. Pelo mesmo Cristo, Senhor nosso. Amém.\n℣. Angelus Domini nuntiavit Mariæ."
+  },
+  {
+    "titulo": "Antes de comungar",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Antes de estudar",
+    "categoria": "Oração",
+    "texto": "Criador inefável, que dos tesouros da vossa sabedoria tirastes as três hierarquias dos anjos, colocando-as com ordem admirável no céu empíreo, e distribuístes as partes do universo com elegantíssima harmonia; vós, que sois chamado a verdadeira fonte da luz e o princípio supereminente da sabedoria, vos digneis infundir sobre as trevas da minha mente o raio do esplendor, removendo as duplas trevas nas quais nasci, o pecado e a ignorância. Vós, que tornais fecunda a língua das crianças, instruí minha língua e infundi em meus lábios a graça da vossa bênção. Concedei-me agudeza para entender, capacidade de reter, sutileza em relevar, facilidade de aprender, graça abundante de falar e de escrever. Ensinai-me a começar, regei-me a continuar e a perseverar até o término. Por Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "Antes de qualquer atividade",
+    "categoria": "Oração",
+    "texto": "1.\nDai-nos, Senhor, nós vos pedimos, o auxílio da vossa graça, a fim de cumprirmos, sob a vossa operação, o que por vossa autoridade sabemos ser o nosso dever. Por Cristo, Senhor nosso. Amém. —\n2.\nDai-nos, nós vos pedimos, Deus todo-poderoso, que, meditando sempre o que é conforme à razão, levemos a cabo por palavras e obras o que é do vosso agrado. Por Cristo, Senhor nosso. Amém.\n1."
+  },
+  {
+    "titulo": "Antes e depois do Ofício",
+    "categoria": "Oração",
+    "texto": "A sacrossanta e indivisa Trindade, à beatíssima e gloriosíssima humanidade de Nosso Senhor Jesus Cristo crucificado, à fecunda integridade de Maria sempre Virgem e a todo o coro dos santos sejam dados louvor, honra, poder e glória por toda a criatura, e a nós a remissão dos nossos pecados, por todos os séculos dos séculos. Amém.\n℣. Benditas as entranhas da Virgem Maria, que portaram o Filho do eterno Pai."
+  },
+  {
+    "titulo": "Ao deitar-se",
+    "categoria": "Oração",
+    "texto": "1.\nSalvai-nos, Senhor, durante a vigília e guardai-nos durante o sono, para que vigiemos com Cristo e descansemos em paz. Guardai-nos, Senhor, como à pupila dos olhos; à sombra de vossas asas protegei-nos. Dignai-vos, Senhor, conservar-nos sem pecado esta noite.\nOremos\nVisitai, Senhor, nós vos pedimos, esta casa e afastai dela todas as insídias do inimigo. Que os vossos santos anjos nela habitem e nos guardem sempre na paz, e que a vossa bênção esteja sobre nós sempre. Por Cristo, Senhor nosso. Amém. — Ó Maria, concebida sem pecado, rogai por nós que recorremos a vós.\n2.\nEm vossas benditas mãos, Senhor Deus; no seio de vossa misericórdia, ó Virgem Maria; e também à vossa proteção, ó santos anjos e eleitos de Deus, entrego agora e sempre meu corpo e minha alma. Amém.\n1."
+  },
+  {
+    "titulo": "Ao levantar-se",
+    "categoria": "Oração",
+    "texto": "O\nDeus, vós sois o meu Deus, com ardor vos procuro. Minha alma está sedenta de vós, e minha carne por vós anseia\n(\nSl\n62,1\n). Bendita seja a santa e indivisa Trindade, agora e sempre, por todos os séculos dos séculos. Amém. Glória ao Pai,\netc.\nEm nome de Nosso Senhor Jesus Cristo, levanto-me. Que ele me abençoe, governe, guarde e conduza à vida eterna. Amém. — Com vosso divino Filho, abençoai-nos, Virgem Maria!\nD\neus, Deus meus, ad te de luce vigilo. Sitivit in te anima mea, quam multipliciter tibi caro mea\n(\nPs"
+  },
+  {
+    "titulo": "Ao Sagrado Coração",
+    "categoria": "Oração",
+    "texto": "1.\nJesus, manso e humilde de coração, fazei o nosso coração semelhante ao vosso. —\n2.\nSacratíssimo Coração de Jesus, tende piedade de nós. —\n3.\nCoração sacratíssimo e misericordioso de Jesus, dai-nos a paz.\n1."
+  },
+  {
+    "titulo": "Aos anjos da guarda",
+    "categoria": "Oração",
+    "texto": "Santos anjos da guarda, defendei-nos no combate, para que não pereçamos no tremendo juízo.\n℣. À vista dos anjos cantar-te-ei salmos, meus Deus.\n℟. Adorar-vos-ei no vosso templo santo e confessarei o vosso nome.\nOremos\nDeus, que com inefável providência vos dignais enviar vossos santos anjos para a nossa guarda, concedei aos que vos suplicamos sermos sempre defendidos por sua proteção e gozarmos de sua eterna companhia. Por Cristo, Senhor nosso. Amém.\nSancti angeli custodes nostri, defendite nos in prœlio, ut non pereamus in tremendo iudicio.\n℣. In conspectu angelorum psallam tibi, Deus meus.\n℟. Adorabo ad templum sanctum tuum et confitebor nomini tuo."
+  },
+  {
+    "titulo": "Ao santíssimo Nome",
+    "categoria": "Oração",
+    "texto": "Senhor Jesus Cristo, que dissestes: “Pedi, e recebereis; buscai, e achareis; batei, e abrir-se-vos-á”, nós vos suplicamos: dai aos que vo-lo pedimos o afeto do vosso diviníssimo amor, para que vos amemos de todo o coração, por palavras e obras, e nunca cessemos do vos louvar. Fazei-nos, Senhor, ter sempre igual amor e temor ao vosso santo nome, pois não deixais de governar os que estabeleceis na firmeza do vosso amor. Vós, que viveis e reinais pelos séculos dos séculos. Amém."
+  },
+  {
+    "titulo": "Ao santíssimo Sacramento",
+    "categoria": "Oração",
+    "texto": "1."
+  },
+  {
+    "titulo": "À Sagrada Família",
+    "categoria": "Oração",
+    "texto": "1.\nJesus, Maria e José, socorrei-nos! —\n2.\nAmado Jesus, José e Maria, dou-vos o coração e a alma minha; amado Jesus, José e Maria, assisti-me na última agonia; amado Jesus, José e Maria, expire em paz entre vós a alma minha.\n1."
+  },
+  {
+    "titulo": "À santa Cruz",
+    "categoria": "Oração",
+    "texto": "1.\nÓ Cruz, certeza de salvação. Ó Cruz, à qual sempre adoro. Ó Cruz do Senhor, que estás sempre comigo. Ó Cruz, na qual me refugio. —\n2.\nSalve, ó cruz, única esperança! —\n3.\nPelo sinal da santa cruz, livrai-nos, Deus nosso Senhor, dos nossos inimigos.\n1.\nCrux mihi certa salus. Crux est quam semper adoro. Crux Domini mecum. Crux mihi refugium. —\n2.\nO crux, ave, spes unica! —\n3.\nPer signum cucis de inimicis nostris libera nos, Deus noster"
+  },
+  {
+    "titulo": "A Santa Teresinha",
+    "categoria": "Oração",
+    "texto": "Senhor, que dissestes: “Se não vos tornardes como crianças, não entrareis no reino dos céus” (\nMt\n18,3\n), dai-nos, vo-lo pedimos, seguir de tal modo os exemplos de Santa Teresa, virgem, em humildade e simplicidade de coração, que alcancemos os prêmios eternos. Vós, que viveis e reinais pelos séculos dos séculos. Amém."
+  },
+  {
+    "titulo": "A São Gabriel Arcanjo",
+    "categoria": "Oração",
+    "texto": "O Deus, que dentre todos os anjos escolhestes o Arcanjo Gabriel para anunciar o mistério de vossa Encarnação, concedei propício que, celebrando a sua festa na terra, experimentemos o efeito de seu patrocínio no céu. Vós, que viveis e reinais pelos séculos dos séculos. Amém."
+  },
+  {
+    "titulo": "A São Rafael Arcanjo",
+    "categoria": "Oração",
+    "texto": "Deus, que destes o bem-aventurado Rafael Arcanjo como guia ao vosso servo Tobias em seu caminho, concedei a nós, vossos servos, que ele sempre nos guarde e nos preste o auxílio de sua proteção. Por Cristo, Senhor nosso. Amém.\nDeus, qui beatum Raphaëlem Archangelum Tobiæ famulo tuo comitem dedisti in via, concede nobis famulis tuis, ut eiusdem semper protegamur custodia et muniamur auxilio. Per Christum Dominum nostrum."
+  },
+  {
+    "titulo": "Ato de abandono",
+    "categoria": "Oração",
+    "texto": "Senhor Deus meu, desde já aceito de vossas mãos, com ânimo sereno e alegre, qualquer gênero de morte que vos aprouver, com todas as suas angústias, penas e dores."
+  },
+  {
+    "titulo": "Ato de caridade",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Ato de esperança",
+    "categoria": "Oração",
+    "texto": "Meu deus, confiando em vossas promessas, porque sois fiel, poderoso e misericordioso, espero pelos méritos de Jesus Cristo a glória do paraíso e os meios para alcança-la, isto é, a remissão dos meus pecados e a perseverança final na vossa graça."
+  },
+  {
+    "titulo": "Ato de fé",
+    "categoria": "Oração",
+    "texto": "Meu Deus, creio firmemente que sois um só Deus em três Pessoas realmente distintas, Pai, Filho e Espírito Santo; creio que o Filho, pela nossa salvação, se encarnou, padeceu, morreu, ressuscitou dos mortos e dá a cada um, conforme os próprios méritos, ou o prêmio no Céu ou o castigo no Inferno. Creio nisto e em tudo o mais que crê e ensina a Igreja Católica, porque vós, que não vos podeis enganar nem nos enganar, o revelaste.\nDeus meus, firmiter credo te esse unum Deum in tribus distinctis personis, Patre, Filio et Spiritui sancto, et Filium propter nostram salutem incarnatum, passum et mortuum esse, resurrexisse a mortuis et unicuique pro meritis retribuere aut præmium in paradiso aut pœnam in inferno. Hæc ceteraque omnia quæ credit et docet Catholica Ecclesia, credo quia tu ea revelasti, qui nec ipse falli nec nos fallere potes."
+  },
+  {
+    "titulo": "A todos os santos",
+    "categoria": "Oração",
+    "texto": "Santos todos de Deus, dignai-vos interceder pela nossa salvação e pela de todo o mundo.\n℣. Alegrai-vos no Senhor e exultai, justos.\n℟. Gloriai-vos, todos os retos de coração.\nOremos\nProtegei, Senhor, o vosso povo, e conservai com proteção perpétua os que confiamos no patrocínio dos vossos Apóstolos Pedro e Paulo e no dos outros Apóstolos. Que todos os vossos santos, Senhor, nos assistam em toda a parte, a fim de que, comemorando os seus méritos, experimentemos o seu patrocínio. Concedei a vossa paz aos nossos dias, e repeli da vossa Igreja toda iniquidade. Disponde os nossos passos, ações e desejos na prosperidade da vossa salvação. Retribuí a nossos benfeitores os bens que não se acabam, e a todos os fiéis defuntos concedei o descanso eterno. Por Cristo, Senhor nosso.\nSancti Dei omnes, intercedere dignemini pro nostra omniumque salute.\n℣. Lætamini in Domino et exultate, iusti.\n℟. Et gloriamini, omnes recti corde."
+  },
+  {
+    "titulo": "Atos de fé, esperança e caridade",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Ave-José",
+    "categoria": "Oração",
+    "texto": "Ave, José, cheio de graça, Jesus e Maria são convosco; bendito sois vós entre os homens, e bendito é o fruto de vossa esposa, Jesus. São José, pai nutrício de Jesus e da bem-aventurada Virgem Maria, vossa esposa, rogai por nós vossos devotos, agora e na hora da nossa morte. Amém."
+  },
+  {
+    "titulo": "Ave-Maria",
+    "categoria": "Oração",
+    "texto": "Ave, Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres, e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós pecadores, agora e na hora da nossa morte. Amém."
+  },
+  {
+    "titulo": "Ave, Rainha dos céus (Quaresma)",
+    "categoria": "Oração",
+    "texto": "Ave, Rainha do céu;\nave, dos anjos Senhora;\nave, raiz, ave, porta;\nda luz do mundo és aurora.\nExulta, ó Virgem tão bela,\nas outras seguem-te após;\nnós te saudamos: adeus!\nE pede a Cristo por nós!\n℣. Fazei-me digno de vos louvar, sagrada Virgem.\n℟. Dai-me virtude contra os vossos inimigos.\nOremos\nConcedei, misericordioso Deus, sustento à nossa fragilidade, para que nós, que celebramos a memória da santa Mãe de Deus, com o auxílio de sua intercessão ressurjamos de nossas iniquidades. Pelo mesmo Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "“Ave verum”",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "A vós, São José, recorremos",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "À vossa proteção",
+    "categoria": "Oração",
+    "texto": "A vossa proteção recorremos, santa Mãe de Deus; não desprezeis as nossas súplicas em nossas necessidades, mas livrai-nos sempre de todos os perigos, ó Virgem gloriosa e bendita."
+  },
+  {
+    "titulo": "Bênção de viagem",
+    "categoria": "Oração",
+    "texto": "Que, pela intercessão da bem-aventurada sempre Virgem Maria, tenhamos uma boa viagem. Que o Senhor esteja no nosso caminho e os seus anjos nos acompanhem. Em nome do Pai e do Filho e do Espírito Santo. Amém."
+  },
+  {
+    "titulo": "Bênção dos alimentos",
+    "categoria": "Oração",
+    "texto": "Antes das refeições\n℣. Abençoai-nos, Senhor, a nós e a estes dons que da vossa liberalidade recebemos. Por Cristo, Senhor nosso.\n℟. Amém.\nNo almoço\n:\n℣. Que o Rei da eterna glória nos faça participantes da mesa celestial.\n℟. Amém.\nNo jantar\n:\n℣. Que o Rei da eterna glória nos conduza à ceia da vida eterna.\n℟. Amém.\nDepois das refeições\n℣. Nós vos damos graças, Deus onipotente, por todos os vossos benefícios. Vós, que viveis e reinais pelos séculos dos séculos.\n℟. Amém.\n℣. Que Deus nos dê a sua paz.\n℟. E a vida eterna. Amém.\nAnte mensam"
+  },
+  {
+    "titulo": "Cântico de Nossa Senhora",
+    "categoria": "Oração",
+    "texto": "A minh’alma engrandece o Senhor, e o meu espírito exultou em Deus, meu Salvador, porque olhou para a humildade de sua escrava. Eis que doravante me chamarão bem-aventurada todas as gerações, porque fez em mim grandes coisas o que é todo-poderoso. O seu nome é santo, e sua misericórdia se estende de geração em geração aos que o temem. Ele mostrou a força de seu braço: dispersou os soberbos de coração. Derrubou do trono os poderosos e exaltou os humildes. Aos famintos encheu de bens, e aos ricos despediu de mãos vazias. Socorreu Israel, seu servo, lembrado de sua misericórdia, conforme prometera aos nossos pais, em favor de Abraão e de sua descendência, para sempre.\nMagnificat anima mea Dominum, et exultavit spiritus meus in Deo salutari meo, quia respexit humilitatem ancillæ suæ. Ecce enim ex hoc beatam me dicent omnes generationes, quia fecit mihi magna qui potens est. Et sanctum nomen eius, et misericordia eius a progenie in progenies timentibus eum. Fecit potentiam in brachio suo: dispersit superbos mente cordis sui. Deposuit potentes de sede et exaltavit húmiles. Esurientes implevit bonis, et divites dimisit inanes. Suscepit Israël puerum suum, recordatus misericordiæ suæ, sicut locutus est ad patres nostros, Abraham et semini eius in sæcula."
+  },
+  {
+    "titulo": "Cântico de Zacarias",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Comunhão espiritual",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Consagração a Cristo Rei",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Consagração ao Sagrado Coração",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Contra maus pensamentos",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Cordeiro de Deus",
+    "categoria": "Oração",
+    "texto": "Cordeiro de Deus, que tirais o pecado do mundo, tende piedade de nós.\nCordeiro de Deus, que tirais o pecado do mundo, tende piedade de nós.\nCordeiro de Deus, que tirais o pecado do mundo, dai-nos a paz."
+  },
+  {
+    "titulo": "Dai-lhes, Senhor, o descanso eterno",
+    "categoria": "Oração",
+    "texto": "℣. Dai-lhes, Senhor, o descanso eterno.\n℟. E que a luz perpétua os ilumine.\n℣. Descansem em paz.\n℟. Amém."
+  },
+  {
+    "titulo": "Depois da Confissão",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Em qualquer necessidade",
+    "categoria": "Oração",
+    "texto": "Deus, nosso refúgio e fortaleza, escutai as piedosas preces de vossa Igreja, vós, que sois o autor da piedade, e concedei-nos alcançar de fato o que confiantes vos pedimos. Por Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "Eu, pecador",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Eu vos imploro, dulcíssimo Jesus",
+    "categoria": "Oração",
+    "texto": "Eu vos imploro, dulcíssimo Jesus Cristo, que a vossa paixão seja para mim a virtude de que eu esteja munido, protegido e defendido; que as vossas chagas sejam para mim a comida e a bebida de que eu esteja alimentado, inebriado e deliciado; que a aspersão do vosso sangue seja para mim a purificação de todos os meus delitos; que a vossa morte seja para mim glória sempiterna. Nisso esteja o meu alimento e a minha alegria, a minha salvação e a doçura de meu coração. Vós, que viveis e reinais pelos séculos dos séculos. Amém."
+  },
+  {
+    "titulo": "Faça-se, cumpra-se, seja louvada",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Glória a Deus nas alturas",
+    "categoria": "Oração",
+    "texto": "Glória a Deus nas alturas, e paz na terra aos homens por Ele amados. Senhor Deus, Rei dos céus, Deus Pai todo-poderoso. Nós vos louvamos, nós vos bendizemos, nós vos adoramos, nós vos glorificamos, nós vos damos graças por vossa imensa glória. Senhor Jesus Cristo, Filho unigênito, Senhor Deus, Cordeiro de Deus, Filho de Deus Pai, vós que tirais o pecado do mundo, tende piedade de nós; vós que tirais o pecado do mundo, acolhei a nossa súplica. Vós que estais à direita do Pai, tende piedade de nós. Só vós sois Santo, só vós o Senhor, só vós o Altíssimo, Jesus Cristo, com o Espírito Santo na glória de Deus Pai. Amém."
+  },
+  {
+    "titulo": "Glória ao Pai",
+    "categoria": "Oração",
+    "texto": "Glória ao Pai e ao Filho e ao Espírito Santo, assim como era no princípio, agora e sempre, e pelos séculos dos séculos. Amém."
+  },
+  {
+    "titulo": "Inspirai, ó Senhor",
+    "categoria": "Oração",
+    "texto": "Inspirai, ó Senhor, as nossas ações e ajudai-nos a realizá-las, para que em vós comece e para vós termine tudo aquilo que fizermos. Por Cristo, Senhor nosso.\nAmém."
+  },
+  {
+    "titulo": "Invocação do Espírito Santo",
+    "categoria": "Oração",
+    "texto": "“Vinde, Espírito Santo, enchei” (séc. XI/XII)\nVinde, Espírito Santo, enchei o coração dos vossos fiéis e acendei neles o fogo do vosso amor.\n℣.\nEnviai o vosso Espírito, e serão criados.\n℟.\nE renovareis a face da terra.\nOremos\nÓ Deus, que instruístes o coração dos vossos fiéis com a luz do Espírito Santo, concedei-nos amar, no mesmo Espírito, o que é reto e gozar sempre a sua consolação. Por Cristo, Senhor nosso. Amém.\nVeni, sancte Spiritus, reple tuorum corda fidelium, et tui amoris in eis ignem accende.\n℣.\nEmitte Spiritum tuum, et creabuntur.\n℟.\nEt renovabis faciem terræ."
+  },
+  {
+    "titulo": "Kyrie eleison",
+    "categoria": "Oração",
+    "texto": "Senhor, tende piedade de nós; Cristo, tende piedade de nós; Senhor, tende piedade de nós."
+  },
+  {
+    "titulo": "“Laudate Dominum”",
+    "categoria": "Oração",
+    "texto": "Louvai o Senhor, todas as nações;\nlouvai-o, todos os povos,\nporque se confirmou sobre nós a sua misericórdia,"
+  },
+  {
+    "titulo": "Lembrai-vos",
+    "categoria": "Oração",
+    "texto": "Lembrai-vos, ó piedosíssima Virgem Maria, que nunca se ouviu dizer que algum daqueles que a vós têm recorrido, implorado a vossa assistência e invocado o vosso auxílio fosse por vós desamparado. Animado eu, pois, por igual confiança, a vós recorro, ó Mãe, Virgem das virgens; a vós venho; aos vossos pés, gemendo, pecador me prostro. Não desprezeis as minhas súplicas, ó Mãe do Verbo encarnado; mas ouvi-as propícia e atendei-as. Amém."
+  },
+  {
+    "titulo": "Livrai-me, Senhor Jesus",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Maria, Mãe de graça",
+    "categoria": "Oração",
+    "texto": "Séc. XI?\nMaria, Mãe de graça, Mãe de misericórdia, do inimigo defendei-nos e na hora da morte acolhei-nos.\nMaria, Mater gratiæ, Mater misericordiæ, tu nos ab hoste protege et hora mortis suscipe."
+  },
+  {
+    "titulo": "Medalha de São Bento",
+    "categoria": "Oração",
+    "texto": "Cruz sagrada seja minha luz; não seja o dragão quem me conduz.\nVade-retro, Satã; nunca me sugiras coisa vã. São más tuas ofertas; do teu veneno tu mesmo bebas.\nC(rux) S(acra) S(it) M(ihi) L(ux) N(on) D(raco) S(it) M(ihi) D(ux)\nV(ade) • R(etro) • S(atana) • N(unquam) • S(uadeas) • M(ihi) • V(ana) • S(unt) • M(ala) Q(uae) • L(ibas) • I(pse) • V(enena) • B(ibas)"
+  },
+  {
+    "titulo": "Nós vos damos graças",
+    "categoria": "Oração",
+    "texto": "Nós vos damos graças, Deus onipotente, por todos os vossos benefícios. Vós, que viveis e reinais pelos séculos dos séculos. Amém."
+  },
+  {
+    "titulo": "Ó boa cruz",
+    "categoria": "Oração",
+    "texto": "Séc. VI\n1. Salve, cruz, que no corpo de Cristo foste consagrada e das pérolas de seus membros adornada! Antes que em ti subisse o Senhor, infundias temor terreno; mas agora, fonte de amor celeste, és com gosto recebida. Sabem os fiéis quantos gozos em ti guardas, quantos dons preparados! Seguro, pois, e ledo a ti venho, para que, exultante, tu me recebas a mim, discípulo daquele que de ti pendeu, pois que sempre amei e desejei abraçar a ti.\n2. Ó boa cruz, que do corpo de Jesus recebeste a formosura, tanto tempo desejada, tão ardentemente amada, sem descanso procurada! Para a minha alma ansiosa estás por fim preparada! Retira-me dentre os homens e devolve minha vida ao Mestre a quem pertenço! Por ti me receba aquele que por ti me resgatou.\n1. O bona crux, quæ decorem et pulchritudinem de membris Domini suscepisti, diu desiderata, sollicite amata, sine intermissione quæsita et aliquando iam concupiscenti animo præparata. Accipe me ab hominibus et redde me Magistro meo, ut per te me recipiat qui per te redemit me."
+  },
+  {
+    "titulo": "Ó divino Coração de Jesus",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Oferecimento do dia",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Olhai, Senhor, do vosso santuário",
+    "categoria": "Oração",
+    "texto": "Olhai, Senhor, do vosso santuário e da excelsa morada dos céus, e vede esta sacrossanta Hóstia que o nosso sumo Pontífice e Senhor Jesus, vosso santo Filho, vos oferece pelos pecados de seus irmãos. Aplaque-se a vossa ira, e perdoai nossa iniquidade. Eis que a voz do sangue de nosso irmão Jesus ergue da cruz até vós o seu clamor: “Ouvi, Senhor. Aplacai-vos, Senhor. Atendei e ponde mãos à obra; não tardeis mais, Deus meu, por amor de vós mesmo, porque esta cidade e este vosso povo têm a glória de se lhes haver dado o vosso nome”, e tratai-nos segundo a vossa misericórdia. Amém."
+  },
+  {
+    "titulo": "Ó minha Senhora",
+    "categoria": "Oração",
+    "texto": "“Ó minha Senhora, ó minha Mãe!” (séc. XVII)"
+  },
+  {
+    "titulo": "Oração da Medalha Milagrosa",
+    "categoria": "Oração",
+    "texto": "O Maria, concebida sem pecado, rogai por nós que recorremos a vós.\nO Maria, sine labe concepta, ora pro nobis qui confugimus ad te."
+  },
+  {
+    "titulo": "Oração de Jesus",
+    "categoria": "Oração",
+    "texto": "Senhor Jesus Cristo, Filho de Deus, tende piedade de mim, pecador."
+  },
+  {
+    "titulo": "Oração do incenso",
+    "categoria": "Oração",
+    "texto": "Tradição copta\nDeus eterno, sem princípio nem fim, grande em conselho e poderoso em obras, presente a tudo e em todos, acompanhai-nos nesta hora e ponde-vos no nosso meio; purificai os nossos corações e santificai as nossas almas; limpai-nos de todo pecado voluntário e involuntário, e dai-nos oferecer na vossa presença os sacrifícios racionais, hóstia de bênção, incenso espiritual que, penetrando o véu, suba até o Santo dos Santos."
+  },
+  {
+    "titulo": "Oração vespertina",
+    "categoria": "Oração",
+    "texto": "O clementíssimo Deus, criador, protetor e redentor meu, bendigo-vos com todos os vossos anjos e eleitos e do mais íntimo do coração vos rendo graças por todos os dons e benefícios de corpo e de alma que hoje e sempre, com suma liberalidade, me haveis concedido. Mas que vos hei de retribuir, Senhor, por tudo o que me tendes dado? A mim mesmo e tudo o que me destes, assim como os louvores e afetos de amor de todos os santos, unido à Paixão e aos méritos de Cristo, como devida ação de graças: eis o que vos ofereço. Recebei, ó Pai eterno, esta minha oblação; oxalá pudesse eu, com maior afeto, vos louvar e glorificar agora e para sempre com todas as criaturas!"
+  },
+  {
+    "titulo": "Orações de Fátima",
+    "categoria": "Oração",
+    "texto": "1. Ó Jesus, é por vosso amor, pela conversão dos pecadores e em reparação pelos pecados cometidos contra o Imaculado Coração de Maria!\n2. Ó meu Jesus, perdoai-nos, livrai-nos do fogo do inferno; levai as almas todas para o céu, principalmente as que mais precisarem!"
+  },
+  {
+    "titulo": "Orações do Anjo de Portugal",
+    "categoria": "Oração",
+    "texto": "1. Meu Deus, eu creio, adoro, espero e vos amo. Peço-vos perdão para os que não creem, não adoram, não esperam e não vos amam."
+  },
+  {
+    "titulo": "“O  salutaris Hostia”",
+    "categoria": "Oração",
+    "texto": "O salutar Hóstia,\nque do céus abris a porta:\nguerras oprimem hostis;\ndai-nos força, trazei auxílio.\nQue nos alimentais com vossa carne,\na vós o louvor, ó bom Pastor,\ncom o Pai e com o Espírito,\npelos séculos sem fim.\nAmém.\nO salutáris Hóstia,\nquae caeli pandis óstium:\nbella premunt hostília;\nda robur, fer auxílium.\nQui carne nos pascis tua,\nsit laus tibi, Pastor bone,\ncum Patre cumque Spíritu,\nin sempitérna sáecula.\nÁmen."
+  },
+  {
+    "titulo": "Pai-nosso",
+    "categoria": "Oração",
+    "texto": "Pai nosso, que estais nos céus, santificado seja o vosso nome; venha a nós o vosso reino; seja feita a vossa vontade, assim na terra como no céu; o pão nosso de cada dia nos dai hoje; perdoai-nos as nossas ofensas assim como nós perdoamos a quem nos tem ofendido; e não nos deixeis cair em tentação; mas livrai-nos do mal. Amém."
+  },
+  {
+    "titulo": "“Pange lingua”",
+    "categoria": "Oração",
+    "texto": "Vamos todos louvar juntos\no mistério do amor,\npois o preço deste mundo\nfoi o sangue redentor,\nrecebido de Maria,\nque nos deu o Salvador.\nVeio ao mundo por Maria,\nfoi por nós que ele nasceu.\nEnsinou sua doutrina,\ncom os homens conviveu.\nNo final de sua vida,\num presente ele nos deu.\nObservando a Lei mosaica,\nse reuniu com os irmãos.\nEra noite. Despedida.\nNuma ceia: refeição.\nDeu-se aos Doze em alimento,\npelas suas próprias mãos.\nA Palavra do Deus vivo\ntransformou o vinho e o pão\nno seu sangue e no seu corpo\npara a nossa salvação.\nO milagre nós não vemos,\nbasta a fé no coração."
+  },
+  {
+    "titulo": "Para pedir caridade",
+    "categoria": "Oração",
+    "texto": "1. Deus, que tudo fazeis concorrer para o bem dos que vos amam, dai a nossos corações o inviolável afeto de vossa caridade, de modo que tentação alguma altere os desejos que nos inspirais. Por Cristo, Senhor nosso. Amém.\n2. Deus eterno e todo-poderoso, aumentai em nós a fé, a esperança e a caridade, e, para merecermos alcançar o que prometeis, fazei-nos amar o que ordenais. Por Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "Para pedir paciência",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Para pedir pureza",
+    "categoria": "Oração",
+    "texto": "1.\nPurificai, Senhor, com o fogo do Espírito Santo os nossos rins e o nosso coração, para que vos sirvamos de corpo casto e de coração puro vos sejamos gratos. Por Cristo, Senhor nosso. Amém.\n2.\nPor vossa imaculada conceição e perpétua virgindade, ó puríssima Virgem Maria, purificai o meu coração e a minha carne. — Tornai, Senhor, o meu coração imaculado, para que eu não seja confundido!\n, ou:\nPurificai o meu coração e o meu corpo, santa Maria!\n3.\nDai-nos, Deus eterno e todo-poderoso, alcançar pela inviolável virgindade da puríssima Virgem Maria pureza de mente e de corpo. Amém. — Coração de Maria, refúgio dos pecadores, rogai por nós que recorremos a vós!\n1."
+  },
+  {
+    "titulo": "Pela graça da boa morte",
+    "categoria": "Oração",
+    "texto": "1. Ó Deus, sob cujos olhos todo coração trepida e todas as consciências estremecem, infundi em nós a vossa misericórdia, vo-lo suplicamos, para que, sem presumirmos do valor de nossas boas obras, experimentemos não o vosso juízo numa morte repentina, mas sim o vosso perdão."
+  },
+  {
+    "titulo": "Pela paz da Igreja",
+    "categoria": "Oração",
+    "texto": "Dai à vossa Igreja, nós vos pedimos, Deus de misericórdia, que, reunida no Espírito Santo, de modo algum seja perturbada por perseguições hostis. Sufocai, Senhor, a soberba dos nossos inimigos, e com a força do vosso braço prostrai-lhes a obstinação. Não desprezeis, Deus todo-poderoso, o vosso povo, que a vós clama aflito; mas, pela glória do vosso nome, socorrei de rosto sereno os atribulados. Por Nosso Senhor Jesus Cristo, vosso Filho, que convosco vive e reina pelos séculos dos séculos. Amém."
+  },
+  {
+    "titulo": "Pela própria salvação",
+    "categoria": "Oração",
+    "texto": "O Deus todo-poderoso e eterno, que quisestes que eu, pecador, nascesse no seio da Igreja Católica Romana e me destes chegar assim ao conhecimento do vosso nome, concedei-me, propício, que, tendo-vos conhecido pela fé, seja levado a contemplar face a face vossa grandeza. Por Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "Pela unidade da Igreja",
+    "categoria": "Oração",
+    "texto": "1.\nPara que todos sejam um; como tu, Pai, estás em mim e eu em ti, que também eles sejam um em nós, a fim de que o mundo creia que tu me enviaste.\n℣. E eu te digo: Tu és Pedro.\n℟. E sobre esta pedra edificarei a minha Igreja.\nOremos\nSenhor Jesus Cristo, que dissestes aos vossos Apóstolos: “Deixo-vos a paz, dou-vos a minha paz”, não olheis os nossos pecados, mas a fé que anima a vossa Igreja, e dai-lhe, segundo o vosso desejo, a paz e a unidade. Vós, que viveis e reinais por todos os séculos dos séculos. Amém.\n2"
+  },
+  {
+    "titulo": "Pelo dom de lágrimas",
+    "categoria": "Oração",
+    "texto": "Infundi clemente em nossos corações, Senhor Deus, a graça do Espírito Santo, a qual nos purifique, com gemidos e lágrimas, das manchas dos nossos pecados e nos alcance, por vossa liberalidade, o efeito do tão almejado perdão. Por Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "Pelo perdão dos pecados",
+    "categoria": "Oração",
+    "texto": "O Deus, que a ninguém rejeitais, mas por misericórdia vos deixais aplacar o quanto quereis pela penitência dos pecadores: olhai propício para as nossas humildes preces e iluminai o nosso coração, a fim de podermos cumprir os vossos preceitos. Por Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "Pelos agonizantes",
+    "categoria": "Oração",
+    "texto": "O clementíssimo Jesus, amante das almas, eu vos imploro, pela agonia do vosso santíssimo Coração e pelas dores de vossa Mãe Imaculada: lavai no vosso sangue os pecadores de todo o mundo que agora estão em agonia e hoje hão de morrer. Amém. — Coração agonizante de Jesus, tende piedade dos moribundos."
+  },
+  {
+    "titulo": "Pelo Santo Padre",
+    "categoria": "Oração",
+    "texto": "℣. Oremos pelo nosso beatíssimo Papa\nN\n.\n℟. O Senhor o conserve, lhe dê vida, o torne feliz na terra e não o entregue em poder de seus inimigos. —\nPai-nosso\n,\nAve-Maria\n."
+  },
+  {
+    "titulo": "Pelos benfeitores",
+    "categoria": "Oração",
+    "texto": "Dignai-vos, Senhor, retribuir com a vida eterna todos aqueles que nos fazem bem por amor ao vosso santo nome. Amém."
+  },
+  {
+    "titulo": "Pelos doentes",
+    "categoria": "Oração",
+    "texto": "1. Deus, singular proteção da debilidade humana, mostrai a força do vosso auxílio sobre os vossos servos doentes, para que, ajudados por vossa misericórdia, mereçam apresentar-se incólumes aos olhos da vossa santa Igreja. Por Cristo, Senhor nosso. Amém.\n2. Deus eterno e todo-poderoso, salvação eterna dos que creem: ouvi nossas preces pelos vossos servos doentes, para os quais imploramos o auxílio da vossa misericórdia; a fim de que, havendo recuperado a saúde, vos rendam graças na vossa Igreja. Por Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "Pelos fiéis defuntos",
+    "categoria": "Oração",
+    "texto": "1. Ó Deus, Criador e o Redentor de todos os fiéis, concedei às almas de todos os vossos servos e servas o perdão de todos os seus pecados, e fazei que as nossas piedosas súplicas lhes alcancem a misericórdia que sempre desejaram. Vós, que viveis e reinais pelos séculos dos séculos. Amém.\n2. Deus dos espíritos e de toda carne, que, havendo conculcado a morte, vencestes o demônio e destes a vida ao vosso mundo: vós mesmo, Senhor, dai à alma do vosso servo\nN"
+  },
+  {
+    "titulo": "Pelos hereges e cismáticos",
+    "categoria": "Oração",
+    "texto": "Deus eterno e todo-poderoso, que a todos salvais nem quereis que ninguém pereça, olhai para as almas enganadas por diabólica astúcia, a fim de que, deposta toda perversidade herética, os corações dos que erram tornem arrependidos à unidade da vossa verdade. Por Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "Pelos infiéis",
+    "categoria": "Oração",
+    "texto": "Eterno Deus, criador de todas as coisas, lembrai-vos de que as almas dos infiéis foram por vós criadas e feitas à vossa imagem e semelhança. (Eis, Senhor, que em opróbrio vosso se enche delas o inferno.) Lembrai-vos de que o vosso Filho Jesus, pela salvação dela, se sujeitou a atrocíssima morte. Não permitais, Senhor, que o vosso Filho seja por mais tempo desprezado dos infiéis; antes, aplacado pelas preces dos santos e da Igreja, esposa do vosso santíssimo Filho, lembrai-vos de vossa misericórdia e, esquecido da idolatria e infidelidade deles, fazei que também eles reconheçam um dia ao que enviastes, o Senhor Jesus Cristo, que é nossa salvação, vida e ressurreição, pelo qual fomos libertos e salvos, ao qual seja a glória pelos séculos dos séculos sem fim. Amém."
+  },
+  {
+    "titulo": "Pelos inimigos",
+    "categoria": "Oração",
+    "texto": "1. Deus da paz, amante e custódio da caridade, dai a todos os nossos inimigos paz e caridade verdadeira, e concedei-lhes a remissão de todos os pecados, e livrai-nos, por vosso poder, de suas insídias. Por Cristo, Senhor nosso. Amém.\n2. Senhor, tende piedade dos que me odeiam e invejam, e também dos que me caluniam e detratam. Que nem um deles sequer padeça algum mal por causa de mim, imundo, nem neste século nem no futuro. Santificai-os em vossa misericórdia e protegei-os por vossa benignidade, ó Santíssimo."
+  },
+  {
+    "titulo": "Pelos judeus",
+    "categoria": "Oração",
+    "texto": "Deus eterno e todo-poderoso, que tampouco à infidelidade dos judeus negais a vossa misericórdia, atendei às preces que pela cegueira daquele povo vos apresentamos, a fim de que, reconhecida a luz da vossa verdade, que é Cristo, sejam libertos de suas trevas. Pelo mesmo Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "Pelos méritos de Maria",
+    "categoria": "Oração",
+    "texto": "Nós vos oferecemos, Senhor Jesus Cristo, os méritos de Maria, Mãe vossa e nossa, de pé junto à cruz, a fim de que, por sua piíssima intercessão, alcancemos o feliz efeito de vossa paixão e morte. Amém."
+  },
+  {
+    "titulo": "Pelos pagãos",
+    "categoria": "Oração",
+    "texto": "Deus eterno e todo-poderoso, que buscais sempre não a morte mas a vida dos pecadores, acolhei propício a nossa oração, e libertai os pagãos da idolatria e agregai-os à vossa santa Igreja, para louvor e glória do vosso nome. Por Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "Pelos pais",
+    "categoria": "Oração",
+    "texto": "Deus, que nos mandastes honrar pai e mãe, tende misericórdia das almas de meu pai e de minha mãe e perdoai-lhe os seus pecados; concedei-me a graça de os ver na alegria da luz eterna. Por Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "Pelos pecadores",
+    "categoria": "Oração",
+    "texto": ""
+  },
+  {
+    "titulo": "Pelos sacerdotes",
+    "categoria": "Oração",
+    "texto": "Deus, que constituístes o vosso Filho unigênito sumo e eterno sacerdote, dai aos que ele escolheu por ministros e dispensadores dos vossos mistérios fidelidade no cumprimento da missão que receberam. Pelo mesmo Cristo, Senhor nosso. Amém. — Jesus, Salvador do mundo, santificais os vossos sacerdotes e levitas!"
+  },
+  {
+    "titulo": "Por intercessão de São José",
+    "categoria": "Oração",
+    "texto": "Senhor, nós vos pedimos que, ajudados pelos méritos do esposo de vossa santíssima Mãe, alcancemos por intercessão dele o que às nossas forças é impossível. Vós, que viveis e reinais pelos séculos dos séculos. Amém.\nSanctissimæ Genitricis tuæ sponsi, quæsumus Dómine, meritis adiuvemur, ut quod possibilitas nostra non obtinet, eius nobis intercessione donetur. Qui vivis et regnas in sæcula sæculorum. Ámen."
+  },
+  {
+    "titulo": "Pós-comunhão",
+    "categoria": "Oração",
+    "texto": "1. Nós vos damos graças, ó Senhor filantropo, benfeitor de nossas almas, porque também no presente dia nos fizestes dignos dos vossos celestes e imortais Mistérios. Endireitai o nosso caminho, confirmai no vosso temor a todos nós, guardai a nossa vida e tornai seguros os nossos passos, pelas preces e súplicas da gloriosa Teótoco e sempre Virgem Maria e de todos os vossos santos.\n2. Nós vos damos graças, Deus e Pai de Jesus Cristo, nosso Salvador, pelo vosso santo nome, que fizestes habitar em nós, e pelo conhecimento, pela fé, pela caridade e pela imortalidade que nos destes por Jesus, vosso Filho, por meio do qual, Senhor todo-poderoso, Deus de todas as coisas, criastes o mundo e o que nele há, insculpistes a lei em nossas almas e pusestes à disposição dos homens o necessário à vida. Vós, Deus dos nossos santos e inocentes patriarcas, Abraão, Isaac e Jacó, vossos servos fiéis; vós, Deus poderoso e fiel, veraz e honesto em vossas promessas, que enviastes à terra o vosso Cristo Jesus, a fim de que, sendo Deus Verbo e homem, convivesse com os homens como um deles e erradicasse o erro, lembrai-vos por Ele, também agora, da vossa santa Igreja, que adquiristes pelo precioso sangue do vosso Cristo; livrai-a de todo mal e consumai-a na vossa caridade e na vossa verdade, e reuni-nos a todos no vosso reino, que nos haveis preparado."
+  },
+  {
+    "titulo": "Que vos seja agradável",
+    "categoria": "Oração",
+    "texto": "Que vos seja agradável, Santíssima Trindade, o obséquio da minha servidão, e concedei que o sacrifício que eu, indigno, ofereci aos olhos de vossa majestade vos seja agradável e, pela vossa misericórdia, propício a mim e a todos aqueles por quem o ofereci. Por Cristo, Senhor nosso. Amém."
+  },
+  {
+    "titulo": "Rainha do céu (Tempo Pascal)",
+    "categoria": "Oração",
+    "texto": "℣. Rainha do céu, alegrai-vos, aleluia.\n℟. Porque quem merecestes trazer em vosso seio, aleluia.\n℣. Ressuscitou como disse, aleluia.\n℟. Rogai por nós a Deus, aleluia.\n℣.\nExultai e alegrai-vos, Virgem Maria, aleluia.\n℟."
+  },
+  {
+    "titulo": "Salve-Rainha",
+    "categoria": "Oração",
+    "texto": "Salve, Rainha, mãe de misericórdia, vida, doçura e esperança nossa, salve! A vós bradamos os degredados filhos de Eva. A vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei, e depois deste desterro mostrai-nos Jesus, bendito fruto do vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria.\n℣. Rogai por nós, santa Mãe de Deus.\n℟. Para que sejamos dignos das promessas de Cristo.\nOremos\nConcedei aos vossos servos, Senhor Deus, gozar sempre saúde de corpo e de alma e que, pela gloriosa intercessão da bem-aventurada sempre Virgem Maria, sejamos livres da presente tristeza e gozemos da eterna alegria. Por Nosso Senhor Jesus Cristo, vosso Filho, que convosco vive e reina na unidade do Espírito Santo e é Deus por todos os séculos dos séculos. Amém."
+  },
+  {
+    "titulo": "Santa Maria, socorrei",
+    "categoria": "Oração",
+    "texto": "Santa Maria, socorrei os pobres, ajudai os fracos, consolai os tristes, rogai pelo povo, auxiliai o clero, intercedei por todas as mulheres; sintam todos a vossa ajuda, todos os que celebram a vossa memória."
+  },
+  {
+    "titulo": "​Santo anjo, amparo de minh’alma",
+    "categoria": "Oração",
+    "texto": "Santo anjo, amparo de minh’alma miserável e de minha vida desvairada, não me abandones a mim, pecador, nem te afastes de mim por causa de minha acrasia; não deixes o espírito maligno assenhorear-se de mim por apoderar-se deste corpo mortal. Segura-me pela mão, miserável e fraca, e conduze-me à senda da salvação.\nSim, santo anjo de Deus, guarda e protetor de minh’alma miserável e de meu corpo, perdoa-me tudo em que te haja ofendido todos os dias de minha vida e se em algo pequei neste dia. Protege-me esta noite e guarda-me de toda tentação do adversário, para que eu não ofenda a Deus com pecado algum. Roga por mim ao Senhor que me confirme no seu temor e me faça digno servo da sua bondade. Amém.\nSancte angele, custos meæ miseræ animæ et infelicis vitæ meæ, ne derelinquas me peccatorem, neve recedas a me propter meam iniquitatem; ne des locum maligno spiritui dominare in me dominatione mortalis huius corporis. Complectere miseram atque languentem manum meam, et deduc me in viam salutis."
+  },
+  {
+    "titulo": "Santo anjo do Senhor",
+    "categoria": "Oração",
+    "texto": "Sécs. XI–XII\nSanto anjo do Senhor, meu zeloso guardador, se a ti me confiou a piedade divina, sempre me rege, guarda, governa e ilumina. Amém."
+  },
+  {
+    "titulo": "Santo, Santo, Santo",
+    "categoria": "Oração",
+    "texto": "Santo, santo, santo, Senhor Deus dos exércitos. Os céus e a terra proclamam a vossa glória. Hosana nas alturas. Bendito o que vem em nome do Senhor. Hosana nas alturas."
+  },
+  {
+    "titulo": "São José, pai e protetor das virgens",
+    "categoria": "Oração",
+    "texto": "São José, pai e protetor das virgens, guarda fiel a quem Deus confiou Jesus, a própria inocência, e Maria, Virgem das virgens: em nome de Jesus e de Maria, este duplo tesouro que vos foi tão caro, vos suplico que me conserveis livre de toda impureza, para que com alma pura e corpo casto eu sirva sempre fielmente a Jesus e a Maria. Amém."
+  },
+  {
+    "titulo": "São Miguel Arcanjo, defendei-nos",
+    "categoria": "Oração",
+    "texto": "São Miguel Arcanjo, defendei-nos no combate; sede nosso refúgio contra a maldade e as ciladas do demônio. Ordene-lhe Deus, instantemente o pedimos, e vós, príncipe da milícia celeste, pelo divino poder precipitai no inferno a Satanás e aos outros os espíritos malignos que andam pelo mundo para perder as almas. Amém."
+  },
+  {
+    "titulo": "Símbolo de Santo Atanásio",
+    "categoria": "Oração",
+    "texto": "Todo aquele que quiser salvar-se, antes de mais é preciso que professe a fé católica; quem não a conservar íntegra e pura sem dúvida perecerá para sempre.\nOra, a fé católica é esta: que veneremos um só Deus na Trindade e a Trindade na unidade, sem confundir as Pessoas nem dividir a substância. Porque uma só é a Pessoa do Pai, outra a do Filho e outra a do Espírito Santo; mas uma só é a divindade do Pai e do Filho e do Espírito Santo, igual a sua glória, coeterna a sua majestade. Tal como é o Pai, assim é o Filho e assim o Espírito Santo. Incriado é o Pai, incriado é o Filho e incriado é o Espírito Santo. Imenso é o Pai, imenso é o Filho e imenso o Espírito Santo. Eterno é o Pai, eterno é o Filho e eterno é o Espírito Santo, e contudo não são três eternos, mas um só eterno, assim como não são três incriados nem três imensos, mas um só incriado e um só imenso. Igualmente, onipotente é o Pai, onipotente o Filho e onipotente o Espírito Santo, e contudo não são três onipotentes, mas um só omnipotente. Do mesmo modo, o Pai é Deus, o Filho é Deus e o Espírito Santo é Deus, e contudo não são três deuses, mas um só Deus. Igualmente, o Pai é o Senhor, o Filho é o Senhor e o Espírito Santo é o Senhor, e contudo não são três senhores, mas um só é o Senhor. Pois, assim como a verdade cristã nos obriga a confessar que cada uma das Pessoas é Deus e Senhor, também a religião católica nos proíbe afirmar serem três deuses ou senhores.\nO Pai por ninguém foi feito, nem criado nem gerado. O Filho não foi feito nem criado, mas é gerado só do Pai. O Espírito Santo não foi feito nem criado, nem é gerado, mas procede do Pai e do Filho. Portanto, há um só Pai, e não três Pais; um só Filho, e não três Filhos; um só Espírito Santo, e não três Espíritos Santos. E nesta Trindade, nada é anterior ou posterior, nada é maior ou menor, senão que as três Pessoas são coeternas e iguais entre si. De modo que em tudo, como já foi dito antes, se deve venerar a unidade na Trindade e a Trindade na unidade. Portanto, quem quiser salvar-se deve ter esta fé na Trindade."
+  },
+  {
+    "titulo": "Símbolo dos Apóstolos",
+    "categoria": "Oração",
+    "texto": "Creio em Deus Pai todo-poderoso, criador do céu e da terra. E em Jesus Cristo, seu único Filho, nosso Senhor, que foi concebido pelo poder do Espírito Santo, nasceu da Virgem Maria, padeceu sob Pôncio Pilatos, foi crucificado, morto e sepultado, desceu à mansão dos mortos, ressuscitou ao terceiro dia, subiu aos céus; está sentado à direita de Deus Pai todo-poderoso, donde há de vir a julgar os vivos e os mortos. Creio no Espírito Santo, na santa Igreja católica, na comunhão dos santos, na remissão dos pecados, na ressurreição da carne e na vida eterna. Amém."
+  },
+  {
+    "titulo": "Símbolo  niceno-constantinopolitano",
+    "categoria": "Oração",
+    "texto": "Creio em um só Deus, Pai todo-poderoso, criador do céu e da terra, de todas as coisas visíveis e invisíveis. E em um só Senhor Jesus Cristo, Filho unigênito de Deus, nascido do Pai antes de todos os séculos; Deus de Deus, Luz da luz, Deus verdadeiro de Deus verdadeiro; gerado, não criado; consubstancial ao Pai; por quem todas as coisas foram feitas; que por nós homens e pela nossa salvação desceu dos céus e se encarnou [pelo poder] do Espírito Santo, [do seio] da Virgem Maria e se fez homem; e também por nós foi crucificado sob Pôncio Pilatos; padeceu e foi sepultado; ressuscitou ao terceiro dia, segundo as Escrituras, e subiu ao céu; está sentado à direita do Pai e de novo há de vir em sua glória para julgar os vivo e os mortos; e o seu reino não terá fim. E no Espírito Santo, Senhor que dá a vida, e que procede do Pai e do Filho, e que com o Pai e o Filho é adorado e glorificado, Ele, que falou pelos profetas. E na Igreja una, santa, católica e apostólica. Confesso um só batismo para a remissão dos pecados. E espero a ressurreição dos mortos e a vida do mundo que há de vir. Amém.\nCredo in unum Deum, Patrem omnipoténtem, factórem caeli et terrae, visibílium ómnium et invisibílium. Et in unum Dóminum Iésum Christum, Fílium Dei unigénitum, et ex Patre natum ante omnia saecula, Deum de Deo, lumen de lúmine, Deum verum de Deo vero, génitum, non factum, consubstantiálem Patri: per quem ómnia facta sunt; qui própter nos hómines et própter nostram salútem descéndit de caelis, et incarnátus est de Spíritu sancto ex Maria vírgine, et homo factus est, crucifíxus etiam pro nobis sub Póntio Piláto, pássus et sepúltus est, et resurréxit tertia die secúndum Scriptúras, et ascéndit in caelum, sedet ad déxteram Patris, et íterum ventúrus est cum glória iudicáre vivos et mórtuos: cuius regni non erit finis. Et in Spíritum sanctum, Dóminum et vivificántem, qui ex Patre Filióque procédit, qui cum Patre et Fílio simul adorátur et conglorificátur, qui locútus est per prophétas. Et unam sanctam cathólicam et apostólicam Ecclésiam. Confíteor unum baptísma in remissiónem peccatórum. Et exspécto resurrectiónem mortuórum, et vitam ventúri saeculi. Ámen."
+  },
+  {
+    "titulo": "Sinal da cruz",
+    "categoria": "Oração",
+    "texto": "Pelo sinal da santa cruz, livrai-nos, Deus nosso Senhor, dos nossos inimigos. Em nome do Pai e do Filho e do Espírito Santo. Amém.\nPer signum crucis de inimícis nostris líbera nos, Deus noster. In nómine Patris et Fílii et Spíritus sancti. Ámen."
+  },
+  {
+    "titulo": "“Te Deum”",
+    "categoria": "Oração",
+    "texto": "A vós, ó Deus, louvamos. A vós, Senhor, bendizemos. A vós, eterno Pai, adora toda a terra. A vós os anjos, a vós os céus e todas as potestades, a vós os querubins e serafins aclamam sem cessar: “Santo, Santo, Santo, Senhor Deus do universo. O céu e a terra proclamam a vossa glória”. A vós o glorioso coro dos Apóstolos, a vós a venerável falange dos profetas, a vós o resplandecente exército dos mártires cantam os vossos louvores. A vós por toda a terra vos confessa a santa Igreja Pai de imensa majestade; ao vosso adorável Filho, verdadeiro e único; também ao Espírito Santo Paráclito.\nVós, o rei da glória, ó Cristo, do Pai sois o Filho sempiterno. Vós, ao tomardes o homem que havíeis de salvar, não desprezastes o seio da Virgem. Vós, quebrado o aguilhão da morte, abristes aos que creem o reino dos céus. Vós estais sentado à direita de Deus, na glória do Pai. Cremos que haveis de vir como juiz. Por isso vos rogamos: socorrei os vossos servos, que com precioso sangue redimistes. Contai-os na glória eterna entre os vossos santos.\nSalvai o vosso povo, Senhor, e abençoai a vossa herança.\nGovernai-o e conduzi-o à vida eterna.\nTodos os dias vos bendizemos.\nE louvamos sempre o vosso nome, e pelos séculos dos séculos.\nDignai-vos, Senhor, conservar-nos hoje sem pecado.\nTende piedade de nós, Senhor, tende piedade de nós.\nDesça a vossa misericórdia, Senhor, sobre nós, como esperamos em vós."
+  },
+  {
+    "titulo": "Terço da Divina Misericórdia",
+    "categoria": "Oração",
+    "texto": "Pai nosso, que estais nos céus, santificado seja o vosso nome; venha a nós o vosso reino; seja feita a vossa vontade, assim na terra como no céu; o pão nosso de cada dia nos dai hoje; perdoai-nos as nossas ofensas assim como nós perdoamos a quem nos tem ofendido; e não nos deixeis cair em tentação; mas livrai-nos do mal. Amém.\nAve, Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres, e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós pecadores, agora e na hora da nossa morte. Amém.\nCreio em Deus Pai todo-poderoso, criador do céu e da terra. E em Jesus Cristo, seu único Filho, nosso Senhor, que foi concebido pelo poder do Espírito Santo, nasceu da Virgem Maria, padeceu sob Pôncio Pilatos, foi crucificado, morto e sepultado, desceu à mansão dos mortos, ressuscitou ao terceiro dia, subiu aos céus; está sentado à direita de Deus Pai todo-poderoso, donde há de vir a julgar os vivos e os mortos. Creio no Espírito Santo, na santa Igreja católica, na comunhão dos santos, na remissão dos pecados, na ressurreição da carne e na vida eterna. Amém.\nNas contas em que se rezaria o Pai-nosso, diz-se:\nPai eterno, eu vos ofereço o corpo e o sangue, a alma e a divindade do vosso diletíssimo Filho, Nosso Senhor Jesus Cristo, em propiciação pelos nossos pecados e pelos do mundo inteiro.\nNas contas em que se rezaria a Ave-Maria, diz-se:\nPor sua dolorosa Paixão, tende piedade de nós e do mundo inteiro.\nEm conclusão, diz-se três vezes:\nSanto Deus, Santo forte, Santo imortal, tende piedade de nós e do mundo inteiro."
+  },
+  {
+    "titulo": "Tomai, Senhor, e recebei",
+    "categoria": "Oração",
+    "texto": "Tomai, Senhor, e recebei toda a minha liberdade, a minha memória, o meu entendimento e toda a minha vontade. Tudo o que tenho e possuo, de vós o recebi; por isso a vós, Senhor, o entrego e restituo, para que disponhais de tudo segundo a vossa vontade. Concedei-me somente o vosso amor e a vossa graça, que isto me besta, e não desejo outra coisa da vossa misericórdia infinita. Amém."
+  },
+  {
+    "titulo": "Triságio angélico",
+    "categoria": "Oração",
+    "texto": "Em nome do Pai e do Filho e do Espírito Santo. Amém.\n℣. Abri, Senhor, os meus lábios.\n℟. E a minha boca anunciará o vosso louvor.\n℣. Deus, vinde em meu auxílio.\n℟. Senhor, apressai-vos em me socorrer.\n℣. Glória ao Pai e ao Filho e ao Espírito Santo.\n℟. Assim como era no princípio, agora e sempre, e pelos séculos dos séculos. Amém.\nTodos:\nSanto Deus, Santo forte, Santo imortal, tende misericórdia de nós.\nPai nosso,\netc.\nAmém.\n℣. A vós o louvor, a vós a glória, a vós a ação de graças pelos séculos sempiternos, ó Santíssima Trindade.\n℟. Santo, santo, santo, Senhor Deus dos exércitos. Os céus e a terra proclamam a vossa glória.\n℣. Glória ao Pai e ao Filho e ao Espírito Santo.\n℟. Assim como era no princípio, agora e sempre, e pelos séculos dos séculos. Amém.\nTodos:\nA vós, Deus Pai ingênito; a vós, Filho unigênito; a vós, Espírito Santo Paráclito, santa e indivisa Trindade, de todo o coração e boca confessamos, louvamos e bendizemos. A vós a glória pelos séculos.\n℣. Bendigamos ao Pai e ao Filho com o Santo Espírito.\n℟. Louvêmo-lo e exaltêmo-lo pelos séculos.\nOremos\nDeus eterno e todo-poderoso, que destes aos vossos servos conhecer, na confissão da verdadeira fé, a glória da Trindade eterna e, no poder de sua majestade, adorar a sua unidade, nós vos pedimos que, pela firmeza da mesma fé, sejamos sempre protegidos de todas as adversidades. Por Cristo, Senhor nosso.\nTodos:\nAmém.\nTodos:\nLivrai-nos, salvai-nos, vivificai-nos, ó Santíssima Trindade."
+  },
+  {
+    "titulo": "Vinde, Espírito criador (Pentecostes)",
+    "categoria": "Oração",
+    "texto": "Vinde, Espírito criador,\nas almas dos vossos visitai;\nenchei de graça celestial\nos corações que vós criastes.\nVós, chamado Consolador,\ndom do Deus altíssimo,\nfonte viva, fogo, caridade\ne unção espiritual.\nVós, com vossos sete dons,\nsois força de destra de Deus,\nvós, solene prometido do Pai,\nque as bocas de palavra ditais.\nAcendei luz aos sentidos,\ninfundi amor nos corações,\nà fraqueza do nosso corpo\nde virtude perpétua firmai.\nAo inimigo afugentai para longe,\ne a paz dai-nos sem demora;\ntendo-vos assim por guia,\nque evitemos todo o mal.\nPor vós conheçamos o Pai,\nconheçamos também o Filho;\ne em vós, de ambos Espírito,\ncreiamos todo o tempo.\nA Deus Pai seja a glória,\ne ao Filho, que dos mortos\nressuscitou, e ao Paráclito,\npelos séculos dos séculos.\nAmém.\nVeni, Creator Spiritus,\nmentes tuorum visita;"
+  },
+  {
+    "titulo": "Vinde, Santo Espírito",
+    "categoria": "Oração",
+    "texto": "Vinde, Santo Espírito,\ne enviai do céu\num raio da vossa luz.\nVinde, pai dos pobres;\nvinde, doador dos dons;\nvinde, luz dos corações.\nConsolador ótimo,\ndoce hóspede da alma,\ndoce refrigério.\nNo trabalho, descanso;\nno ardor, frescor.\nno pranto, consolo.\nÓ luz beatíssima,\nenchei o íntimo do coração\ndos vossos fiéis.\nSem a vossa força,\nnada há no homem,\nnada há inocente.\nLavai o que é sujo,\nregai o que é árido,\ncurai o que está ferido.\nDobrai o que é rígido,\naquecei o que é frio,\nReconduzi o desviado.\nDai aos vossos fiéis,\nque em vós confiam,\nos sete dons sagrados.\nDai o mérito da virtude,\ndai o êxito da salvação,\ndai a perene alegria.\nAmém.\nVeni, sancte Spiritus,\net emitte cælitus\nlucis tuæ radium."
+  }
+]
