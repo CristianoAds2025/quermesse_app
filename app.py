@@ -2754,6 +2754,7 @@ def api_cadastrar_dizimista():
     dados = request.get_json()
     print("DADOS RECEBIDOS DIZIMISTA:", dados)
 
+    cpf = dados.get("cpf")
     nome = dados.get("nome")
     email = dados.get("email")
     data_nascimento = dados.get("data_nascimento")
@@ -2764,7 +2765,7 @@ def api_cadastrar_dizimista():
     rua_avenida = dados.get("rua_avenida")
     numero = dados.get("numero")
 
-    if not nome or not data_nascimento or not whatsapp or casado is None or not rua_avenida or not numero:
+    if not cpf or not nome or not data_nascimento or not whatsapp or casado is None or not rua_avenida or not numero:
         return jsonify({
             "sucesso": False,
             "erro": "Preencha todos os campos obrigatórios"
@@ -2774,7 +2775,23 @@ def api_cadastrar_dizimista():
     cur = conn.cursor()
 
     cur.execute("""
+        SELECT 1
+        FROM dizimistas
+        WHERE cpf = %s
+    """, (cpf,))
+    
+    if cur.fetchone():
+        cur.close()
+        conn.close()
+    
+        return jsonify({
+            "sucesso": False,
+            "erro": "CPF já cadastrado"
+        }), 400
+
+    cur.execute("""
         INSERT INTO dizimistas (
+            cpf,
             nome,
             email,
             data_nascimento,
@@ -2785,8 +2802,9 @@ def api_cadastrar_dizimista():
             rua_avenida,
             numero
         )
-        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
     """, (
+        cpf,
         nome,
         email,
         data_nascimento,
