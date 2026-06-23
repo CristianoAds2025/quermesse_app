@@ -2859,3 +2859,44 @@ def api_listar_dizimistas():
 
     return jsonify(dados)
 
+# =========================
+# API LISTAR DIZIMISTAS ANIVERSARIANTES
+# =========================
+@app.route("/api/dizimistas/aniversariantes/<int:mes>", methods=["GET"])
+def api_aniversariantes_dizimistas(mes):
+    conn = conectar()
+    cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    cur.execute("""
+        SELECT
+            nome,
+            data_nascimento,
+            whatsapp,
+            'Dizimista' AS tipo
+        FROM dizimistas
+        WHERE SUBSTRING(data_nascimento, 4, 2)::INTEGER = %s
+
+        UNION ALL
+
+        SELECT
+            nome_conjuge AS nome,
+            data_nascimento_conjuge AS data_nascimento,
+            whatsapp,
+            'Cônjuge' AS tipo
+        FROM dizimistas
+        WHERE nome_conjuge IS NOT NULL
+          AND nome_conjuge <> ''
+          AND data_nascimento_conjuge IS NOT NULL
+          AND data_nascimento_conjuge <> ''
+          AND SUBSTRING(data_nascimento_conjuge, 4, 2)::INTEGER = %s
+
+        ORDER BY data_nascimento
+    """, (mes, mes))
+
+    dados = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return jsonify(dados)
+
