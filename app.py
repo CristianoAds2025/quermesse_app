@@ -2985,3 +2985,244 @@ def api_excluir_dizimista(cpf):
         "mensagem": "Dizimista excluído com sucesso"
     })
 
+# =========================
+# API CADASTRAR TURMAS
+# =========================
+@app.route("/api/catequese/turmas", methods=["POST"])
+def api_cadastrar_turma():
+    dados = request.get_json()
+
+    nome = dados.get("nome")
+    etapa = dados.get("etapa")
+    dia_semana = dados.get("dia_semana")
+    horario = dados.get("horario")
+    ano = dados.get("ano")
+
+    if not nome:
+        return jsonify({
+            "sucesso": False,
+            "erro": "Nome da turma é obrigatório"
+        }), 400
+
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        INSERT INTO catequese_turmas
+        (nome, etapa, dia_semana, horario, ano)
+        VALUES (%s, %s, %s, %s, %s)
+    """, (nome, etapa, dia_semana, horario, ano))
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Turma cadastrada com sucesso"
+    })
+
+
+# =========================
+# API LISTAR TURMAS
+# =========================
+@app.route("/api/catequese/turmas", methods=["GET"])
+def api_listar_turmas():
+    conn = conectar()
+    cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    cur.execute("""
+        SELECT *
+        FROM catequese_turmas
+        WHERE ativa = TRUE
+        ORDER BY nome
+    """)
+
+    dados = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return jsonify(dados)
+
+# =========================
+# API CADASTRAR CATEQUISTAS
+# =========================
+@app.route("/api/catequese/catequistas", methods=["POST"])
+def api_cadastrar_catequista():
+    dados = request.get_json()
+
+    nome = dados.get("nome")
+    whatsapp = dados.get("whatsapp")
+    email = dados.get("email")
+
+    if not nome:
+        return jsonify({
+            "sucesso": False,
+            "erro": "Nome do catequista é obrigatório"
+        }), 400
+
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        INSERT INTO catequese_catequistas
+        (nome, whatsapp, email)
+        VALUES (%s, %s, %s)
+    """, (nome, whatsapp, email))
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Catequista cadastrado com sucesso"
+    })
+
+# =========================
+# API LISTAR CATEQUISTAS
+# =========================
+@app.route("/api/catequese/catequistas", methods=["GET"])
+def api_listar_catequistas():
+    conn = conectar()
+    cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    cur.execute("""
+        SELECT *
+        FROM catequese_catequistas
+        WHERE ativo = TRUE
+        ORDER BY nome
+    """)
+
+    dados = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return jsonify(dados)
+
+# =========================
+# API CADASTRAR CATEQUIZANDOS
+# =========================
+@app.route("/api/catequese/catequizandos", methods=["POST"])
+def api_cadastrar_catequizando():
+    dados = request.get_json()
+
+    nome = dados.get("nome")
+    data_nascimento = dados.get("data_nascimento")
+    nome_responsavel = dados.get("nome_responsavel")
+    whatsapp_responsavel = dados.get("whatsapp_responsavel")
+    turma_id = dados.get("turma_id")
+
+    if not nome or not turma_id:
+        return jsonify({
+            "sucesso": False,
+            "erro": "Nome e turma são obrigatórios"
+        }), 400
+
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        INSERT INTO catequese_catequizandos
+        (
+            nome,
+            data_nascimento,
+            nome_responsavel,
+            whatsapp_responsavel,
+            turma_id
+        )
+        VALUES (%s, %s, %s, %s, %s)
+    """, (
+        nome,
+        data_nascimento,
+        nome_responsavel,
+        whatsapp_responsavel,
+        turma_id
+    ))
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Catequizando cadastrado com sucesso"
+    })
+
+# =========================
+# API LISTAR CATEQUIZANDOS
+# =========================
+@app.route("/api/catequese/turmas/<int:turma_id>/catequizandos", methods=["GET"])
+def api_listar_catequizandos_turma(turma_id):
+    conn = conectar()
+    cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    cur.execute("""
+        SELECT *
+        FROM catequese_catequizandos
+        WHERE turma_id = %s
+          AND ativo = TRUE
+        ORDER BY nome
+    """, (turma_id,))
+
+    dados = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return jsonify(dados)
+
+# =========================
+# API REGISTRAR PRESENÇA
+# =========================
+@app.route("/api/catequese/presencas", methods=["POST"])
+def api_registrar_presenca():
+    dados = request.get_json()
+
+    turma_id = dados.get("turma_id")
+    data_encontro = dados.get("data_encontro")
+    presencas = dados.get("presencas")
+
+    if not turma_id or not data_encontro or presencas is None:
+        return jsonify({
+            "sucesso": False,
+            "erro": "Turma, data e presenças são obrigatórios"
+        }), 400
+
+    conn = conectar()
+    cur = conn.cursor()
+
+    for item in presencas:
+        catequizando_id = item.get("catequizando_id")
+        presente = item.get("presente", False)
+        observacao = item.get("observacao", "")
+
+        cur.execute("""
+            INSERT INTO catequese_presencas
+            (
+                turma_id,
+                catequizando_id,
+                data_encontro,
+                presente,
+                observacao
+            )
+            VALUES (%s, %s, %s, %s, %s)
+        """, (
+            turma_id,
+            catequizando_id,
+            data_encontro,
+            presente,
+            observacao
+        ))
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Presenças registradas com sucesso"
+    })
+
