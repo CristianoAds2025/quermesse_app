@@ -2900,3 +2900,88 @@ def api_aniversariantes_dizimistas(mes):
 
     return jsonify(dados)
 
+# =========================
+# API EDITAR DIZIMISTAS
+# =========================
+@app.route("/api/dizimistas/<cpf>", methods=["PUT"])
+def api_editar_dizimista(cpf):
+    dados = request.get_json()
+
+    nome = dados.get("nome")
+    email = dados.get("email")
+    data_nascimento = dados.get("data_nascimento")
+    whatsapp = dados.get("whatsapp")
+    casado = dados.get("casado")
+    nome_conjuge = dados.get("nome_conjuge")
+    data_nascimento_conjuge = dados.get("data_nascimento_conjuge")
+    rua_avenida = dados.get("rua_avenida")
+    numero = dados.get("numero")
+
+    if not nome or not data_nascimento or not whatsapp or casado is None or not rua_avenida or not numero:
+        return jsonify({
+            "sucesso": False,
+            "erro": "Preencha todos os campos obrigatórios"
+        }), 400
+
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        UPDATE dizimistas
+        SET
+            nome = %s,
+            email = %s,
+            data_nascimento = %s,
+            whatsapp = %s,
+            casado = %s,
+            nome_conjuge = %s,
+            data_nascimento_conjuge = %s,
+            rua_avenida = %s,
+            numero = %s
+        WHERE cpf = %s
+    """, (
+        nome,
+        email,
+        data_nascimento,
+        whatsapp,
+        casado,
+        nome_conjuge,
+        data_nascimento_conjuge,
+        rua_avenida,
+        numero,
+        cpf
+    ))
+
+    conn.commit()
+
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Dizimista atualizado com sucesso"
+    })
+
+# =========================
+# API EXCLUIR DIZIMISTAS
+# =========================
+@app.route("/api/dizimistas/<cpf>", methods=["DELETE"])
+def api_excluir_dizimista(cpf):
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        DELETE FROM dizimistas
+        WHERE cpf = %s
+    """, (cpf,))
+
+    conn.commit()
+
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Dizimista excluído com sucesso"
+    })
+
