@@ -3226,3 +3226,32 @@ def api_registrar_presenca():
         "mensagem": "Presenças registradas com sucesso"
     })
 
+# =========================
+# API RELATÓRIO PRESENÇA
+# =========================
+@app.route("/api/catequese/turmas/<int:turma_id>/presencas", methods=["GET"])
+def api_listar_presencas_turma(turma_id):
+    conn = conectar()
+    cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    cur.execute("""
+        SELECT
+            p.id,
+            p.data_encontro,
+            p.presente,
+            p.observacao,
+            c.nome AS nome_catequizando
+        FROM catequese_presencas p
+        JOIN catequese_catequizandos c
+            ON c.id = p.catequizando_id
+        WHERE p.turma_id = %s
+        ORDER BY p.data_encontro DESC, c.nome
+    """, (turma_id,))
+
+    dados = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return jsonify(dados)
+
