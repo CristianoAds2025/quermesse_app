@@ -2825,4 +2825,37 @@ def api_cadastrar_dizimista():
         "sucesso": True,
         "mensagem": "Cadastro realizado com sucesso"
     })
+    0
+# =========================
+# API LISTAR DIZIMISTAS
+# =========================
+@app.route("/api/dizimistas", methods=["GET"])
+def api_listar_dizimistas():
+    conn = conectar()
+    cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    cur.execute("""
+        SELECT
+            id,
+            cpf,
+            nome,
+            email,
+            data_nascimento,
+            whatsapp,
+            casado,
+            nome_conjuge,
+            data_nascimento_conjuge,
+            rua_avenida,
+            numero,
+            TO_CHAR(data_cadastro, 'DD/MM/YYYY HH24:MI') AS data_cadastro
+        FROM dizimistas
+        ORDER BY nome
+    """)
+
+    dados = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return jsonify(dados)
 
