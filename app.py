@@ -3333,3 +3333,126 @@ def api_listar_catequistas_turma(turma_id):
     conn.close()
 
     return jsonify(dados)
+
+# =========================
+# API EDITAR TURMA
+# =========================
+@app.route("/api/catequese/turmas/<int:turma_id>", methods=["PUT"])
+def api_editar_turma(turma_id):
+    dados = request.get_json()
+
+    nome = dados.get("nome")
+    etapa = dados.get("etapa")
+    dia_semana = dados.get("dia_semana")
+    horario = dados.get("horario")
+    ano = dados.get("ano")
+
+    if not nome:
+        return jsonify({
+            "sucesso": False,
+            "erro": "Nome da turma é obrigatório"
+        }), 400
+
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        UPDATE catequese_turmas
+        SET nome = %s,
+            etapa = %s,
+            dia_semana = %s,
+            horario = %s,
+            ano = %s
+        WHERE id = %s
+    """, (nome, etapa, dia_semana, horario, ano, turma_id))
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Turma atualizada com sucesso"
+    })
+
+# =========================
+# API EDITAR CATEQUISTA
+# =========================
+@app.route("/api/catequese/catequistas/<int:catequista_id>", methods=["PUT"])
+def api_editar_catequista(catequista_id):
+    dados = request.get_json()
+
+    nome = dados.get("nome")
+    whatsapp = dados.get("whatsapp")
+    email = dados.get("email")
+
+    if not nome:
+        return jsonify({
+            "sucesso": False,
+            "erro": "Nome do catequista é obrigatório"
+        }), 400
+
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        UPDATE catequese_catequistas
+        SET nome = %s,
+            whatsapp = %s,
+            email = %s
+        WHERE id = %s
+    """, (nome, whatsapp, email, catequista_id))
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Catequista atualizado com sucesso"
+    })
+
+# =========================
+# API EDITAR CATEQUIZANDO
+# =========================
+@app.route("/api/catequese/catequizandos/<int:catequizando_id>", methods=["PUT"])
+def api_editar_catequizando(catequizando_id):
+    dados = request.get_json()
+
+    nome = dados.get("nome")
+    data_nascimento = dados.get("data_nascimento")
+    nome_responsavel = dados.get("nome_responsavel")
+    whatsapp_responsavel = dados.get("whatsapp_responsavel")
+
+    if not nome:
+        return jsonify({
+            "sucesso": False,
+            "erro": "Nome do catequizando é obrigatório"
+        }), 400
+
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        UPDATE catequese_catequizandos
+        SET nome = %s,
+            data_nascimento = %s,
+            nome_responsavel = %s,
+            whatsapp_responsavel = %s
+        WHERE id = %s
+    """, (
+        nome,
+        data_nascimento,
+        nome_responsavel,
+        whatsapp_responsavel,
+        catequizando_id
+    ))
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Catequizando atualizado com sucesso"
+    })
