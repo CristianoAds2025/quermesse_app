@@ -3278,6 +3278,7 @@ def api_vincular_catequista_turma(turma_id):
         FROM catequese_turma_catequistas
         WHERE turma_id = %s
           AND catequista_id = %s
+          AND ativo = TRUE
     """, (turma_id, catequista_id))
 
     if cur.fetchone():
@@ -3291,8 +3292,8 @@ def api_vincular_catequista_turma(turma_id):
 
     cur.execute("""
         INSERT INTO catequese_turma_catequistas
-        (turma_id, catequista_id)
-        VALUES (%s, %s)
+        (turma_id, catequista_id, data_inicio, ativo)
+        VALUES (%s, %s, CURRENT_DATE, TRUE)
     """, (turma_id, catequista_id))
 
     conn.commit()
@@ -3315,15 +3316,18 @@ def api_listar_catequistas_turma(turma_id):
 
     cur.execute("""
         SELECT
+            tc.id AS vinculo_id,
             c.id,
             c.nome,
             c.whatsapp,
-            c.email
+            c.email,
+            TO_CHAR(tc.data_inicio, 'DD/MM/YYYY') AS data_inicio
         FROM catequese_turma_catequistas tc
         JOIN catequese_catequistas c
             ON c.id = tc.catequista_id
         WHERE tc.turma_id = %s
           AND c.ativo = TRUE
+          AND tc.ativo = TRUE
         ORDER BY c.nome
     """, (turma_id,))
 
@@ -3456,3 +3460,60 @@ def api_editar_catequizando(catequizando_id):
         "sucesso": True,
         "mensagem": "Catequizando atualizado com sucesso"
     })
+
+# =========================
+# API DESVINCULAR CATEQUISTA
+# =========================
+@app.route("/api/catequese/turma-catequistas/<int:vinculo_id>/desvincular", methods=["PUT"])
+def api_desvincular_catequista_turma(vinculo_id):
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        UPDATE catequese_turma_catequistas
+        SET
+            ativo = FALSE,
+            data_fim = CURRENT_DATE
+        WHERE id = %s
+    """, (vinculo_id,))
+
+    conn.commit()
+
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Catequista desvinculado com sucesso"
+    })
+
+# =========================
+# API HISTÓRICO CATEQUISTAS
+# =========================
+@app.route("/api/catequese/turmas/<int:turma_id>/historico-catequistas", methods=["GET"])
+def api_historico_catequistas_turma(turma_id):
+    conn = conectar()
+    cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    cur.execute("""
+        SELECT
+            tc.id AS vinculo_id,
+            c.nome,
+            c.whatsapp,
+            c.email,
+            TO_CHAR(tc.data_inicio, 'DD/MM/YYYY') AS data_inicio,
+            TO_CHAR(tc.data_fim, 'DD/MM/YYYY') AS data_fim,
+            tc.ativo
+        FROM catequese_turma_catequistas tc
+        JOIN catequese_catequistas c
+            ON c.id = tc.catequista_id
+        WHERE tc.turma_id = %s
+        ORDER BY tc.data_inicio DESC, c.nome
+    """, (turma_id,))
+
+    dados = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return jsonify(dados)
