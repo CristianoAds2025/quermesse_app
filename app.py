@@ -3255,3 +3255,81 @@ def api_listar_presencas_turma(turma_id):
 
     return jsonify(dados)
 
+# =============================
+# API VINCULAR CATEQUISTA TURMA
+# =============================
+@app.route("/api/catequese/turmas/<int:turma_id>/catequistas", methods=["POST"])
+def api_vincular_catequista_turma(turma_id):
+    dados = request.get_json()
+
+    catequista_id = dados.get("catequista_id")
+
+    if not catequista_id:
+        return jsonify({
+            "sucesso": False,
+            "erro": "Catequista é obrigatório"
+        }), 400
+
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT 1
+        FROM catequese_turma_catequistas
+        WHERE turma_id = %s
+          AND catequista_id = %s
+    """, (turma_id, catequista_id))
+
+    if cur.fetchone():
+        cur.close()
+        conn.close()
+
+        return jsonify({
+            "sucesso": False,
+            "erro": "Catequista já vinculado a esta turma"
+        }), 400
+
+    cur.execute("""
+        INSERT INTO catequese_turma_catequistas
+        (turma_id, catequista_id)
+        VALUES (%s, %s)
+    """, (turma_id, catequista_id))
+
+    conn.commit()
+
+    cur.close()
+    conn.close()
+
+    return jsonify({
+        "sucesso": True,
+        "mensagem": "Catequista vinculado com sucesso"
+    })
+
+# ===============================
+# API LISTAR CATEQUISTA POR TURMA
+# ===============================
+@app.route("/api/catequese/turmas/<int:turma_id>/catequistas", methods=["GET"])
+def api_listar_catequistas_turma(turma_id):
+    conn = conectar()
+    cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    cur.execute("""
+        SELECT
+            c.id,
+            c.nome,
+            c.whatsapp,
+            c.email
+        FROM catequese_turma_catequistas tc
+        JOIN catequese_catequistas c
+            ON c.id = tc.catequista_id
+        WHERE tc.turma_id = %s
+          AND c.ativo = TRUE
+        ORDER BY c.nome
+    """, (turma_id,))
+
+    dados = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return jsonify(dados)
